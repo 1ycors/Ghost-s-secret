@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e4e9279a25b34e2438b80a3734f04dd4
+guid: 28d7e539d90ceec469b1207b9e2ca541
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,22 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0431\u0435\u0433 \u043F\u0435\u0440\u0435\u0434 3_0"
+      name: "\u0434\u0435\u0432\u043E\u0447\u043A\u0430 1_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 30
-        height: 30
+        x: 8
+        y: 32
+        width: 14
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f2e6cd2d14279d4c8a701e5feff6f66
-      internalID: -1353131605
+      spriteID: 3423415806e129d4ba7122e03e6c4080
+      internalID: -147440173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0434\u0435\u0432\u043E\u0447\u043A\u0430 1_1"
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 6
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3773e2affe79ea4e8f0729cd8d86281
+      internalID: 1652546166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0434\u0435\u0432\u043E\u0447\u043A\u0430 1_2"
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 6
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46e2a232ab1c3649879f88a4597aa21
+      internalID: 1832308224
       vertices: []
       indices: 
       edges: []
@@ -141,7 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "\u0431\u0435\u0433 \u043F\u0435\u0440\u0435\u0434 3_0": -1353131605
+      "\u0434\u0435\u0432\u043E\u0447\u043A\u0430 1_0": -147440173
+      "\u0434\u0435\u0432\u043E\u0447\u043A\u0430 1_1": 1652546166
+      "\u0434\u0435\u0432\u043E\u0447\u043A\u0430 1_2": 1832308224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,14 +11,20 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
 
     private Rigidbody2D rb;
+    private Animator anim;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
     private void Update()
     {
-        Movement();
+        float v = Input.GetAxisRaw("Vertical");
+        float h = Input.GetAxisRaw("Horizontal");
+
+        Movement(h,v);
+        RunAnimationCheck(h, v);
     }
     private void FixedUpdate()
     {
@@ -30,17 +36,24 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = movement * runningSpeed;
     }
-    private void Movement()
+    private void Movement(float h, float v)
     {
         if (isLocked) return;
 
-        float v = Input.GetAxisRaw("Vertical");
-        float h = Input.GetAxisRaw("Horizontal");
 
         movement = new Vector2(h, v);
 
         if (movement.magnitude > 1) //нормализация, когда перс двигается по диагонали
             movement = movement.normalized;
+    }
+    void RunAnimationCheck(float h, float v) 
+    {
+
+        bool isMoving = h != 0 || v != 0;
+
+        anim.SetFloat("Horizontal", h);
+        anim.SetFloat("Vertical", v);
+        anim.SetBool("isMoving", isMoving);
     }
     public void LockMovement()
     {
