@@ -16,6 +16,7 @@ public class Dialogue : MonoBehaviour
     public bool isDialogueActive;
 
     private float writingSpeed = 0.01f;
+
     private void Awake()
     {
         window.SetActive(false);
@@ -26,18 +27,18 @@ public class Dialogue : MonoBehaviour
             playerMovement = Player.Instance.GetComponent<PlayerMovement>();
 
         if (playerMovement == null)
-            Debug.LogError("PlayerMovement не найден! Проверь, есть ли скрипт PlayerMovement на объекте игрока.");
+            Debug.LogError("PlayerMovement не найден!");
     }
 
-    private void OnEnable() => Trigger.OnInteract += CheckUp;
-    private void OnDisable() => Trigger.OnInteract -= CheckUp;
+    private void OnEnable() => InputCustom.OnEPressed += TryAdvanceDialogue;
+    private void OnDisable() => InputCustom.OnEPressed -= TryAdvanceDialogue;
 
-    void CheckUp() 
+    void TryAdvanceDialogue() 
     {
         if (!isDialogueActive)
             return;
 
-        if (waitForNext /*&& Input.GetKeyDown(KeyCode.Space)*/) //TODO: заменить пробел на Е
+        if (waitForNext)
         {
             waitForNext = false;
             index++;
@@ -70,7 +71,7 @@ public class Dialogue : MonoBehaviour
             playerMovement.LockMovement();
     }
     private void GetDialogue(int i)
-    {
+    {       
         string line = currentDialogue.dialogueLines[i];
         dialogueText.text = string.Empty;
         StartCoroutine(Writing(line));
