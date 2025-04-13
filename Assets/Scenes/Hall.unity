@@ -291,6 +291,57 @@ Transform:
   - {fileID: 1191307723}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &198902704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 198902706}
+  - component: {fileID: 198902707}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &198902706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198902704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.1373215, y: -0.19730747, z: -0.061040126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &198902707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198902704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fc5818fe2b68849bbe9c4ea6aa29c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questStatement: {fileID: 1509892878}
+  npcStatement: {fileID: 919934616}
+  dialogueManager: {fileID: 1029012187}
+  questSystem: {fileID: 919934617}
+  questSO: {fileID: 11400000, guid: 94dd11f30975a714da82c0439d5710fd, type: 2}
+  quests:
+  - {fileID: 0}
 --- !u!1 &308250786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,6 +1763,7 @@ GameObject:
   - component: {fileID: 919934614}
   - component: {fileID: 919934615}
   - component: {fileID: 919934616}
+  - component: {fileID: 919934617}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: NPC
@@ -1859,6 +1911,21 @@ MonoBehaviour:
   defaultDialogue: {fileID: 11400000, guid: 32e4b4a9187ef63428e503b2757ad4d6, type: 2}
   questStart: {fileID: 11400000, guid: 17d3f4b6be9013a4182a37a95e883a0f, type: 2}
   questComplete: {fileID: 11400000, guid: acca316ee6048bf4992857626a74fcc6, type: 2}
+--- !u!114 &919934617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919934611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31bf548b4fe9fd48acf3f9b8ebc741f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentQuest: {fileID: 11400000, guid: 94dd11f30975a714da82c0439d5710fd, type: 2}
+  inventory: {fileID: 354533645}
+  trigger: {fileID: 493802794}
 --- !u!1 &954714200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2447,6 +2514,51 @@ Transform:
   m_Children:
   - {fileID: 771349005}
   - {fileID: 2106983557}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1509892877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1509892879}
+  - component: {fileID: 1509892878}
+  m_Layer: 0
+  m_Name: QuestStatement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1509892878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509892877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e45fba13a7d344ea73fea5df6b9f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentQuest: 0
+--- !u!4 &1509892879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509892877}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.1373215, y: -0.19730747, z: -0.061040126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1636292169
@@ -6393,3 +6505,5 @@ SceneRoots:
   - {fileID: 1916659424}
   - {fileID: 1029012188}
   - {fileID: 484728397}
+  - {fileID: 198902706}
+  - {fileID: 1509892879}

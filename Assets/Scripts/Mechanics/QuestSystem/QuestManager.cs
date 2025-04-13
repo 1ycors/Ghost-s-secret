@@ -1,80 +1,68 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using static NPCStatement;
+using static QuestStatement;
 
 public class QuestManager : MonoBehaviour
 {
-    public QuestSO currentQuest;
-    //public Inventory inventory;
-    public Trigger trigger;
+    public QuestStatement questStatement;
+    public NPCStatement npcStatement;
+    public DialogueManager dialogueManager;
+    public QuestSystem questSystem;
+    public QuestSO questSO;
 
-    private void Start()
-    {
-        currentQuest.isQuestActive = false;
-        currentQuest.isQuestCompleted = false;
-    }
+    //создать список квестов.
+    public List<QuestSO> quests = new List<QuestSO>();
 
     private void OnEnable()
     {
-        Trigger.OnInteract += QuestCheck;
+        Trigger.OnInteract += CheckQuestStatus;
     }
     private void OnDisable()
     {
-        Trigger.OnInteract -= QuestCheck;
+        Trigger.OnInteract -= CheckQuestStatus;
     }
-
-    void QuestStart()
+    void CheckQuestStatus()
     {
-        currentQuest.isQuestActive = true;
-        Debug.Log("Квест начался!");
-    }
-    void QuestCheck()
-    {
-        if (!currentQuest.isQuestActive)
-        {
-            QuestStart();
+        if (quests.Count == 0)
             return;
-        }
-        if (currentQuest.isQuestActive && !currentQuest.isQuestCompleted /*&& RequiredItemSearch()*/)
+
+        switch (questStatement.currentQuest)
         {
-            QuestComplete();
-            return;
+            case QuestState.QuestNotActive:
+                dialogueManager.PlayDialogue();
+                questStatement.currentQuest = QuestState.QuestActive;
+                npcStatement.currentState = NPCState.QuestStart;
+                Debug.Log($"current questState: {questStatement.currentQuest}");
+                break;
+            case QuestState.QuestActive:
+                dialogueManager.PlayDialogue();
+                questStatement.currentQuest = QuestState.QuestInProgress;
+                npcStatement.currentState = NPCState.QuestInProgress;
+                Debug.Log($"current questState: {questStatement.currentQuest}");
+                break;
+            case QuestState.QuestInProgress:
+                if (questSystem.RequiredItemSearch())
+                {
+                    questStatement.currentQuest = QuestState.QuestComplete;
+                    npcStatement.currentState = NPCState.QuestComplete;
+                    Debug.Log($"current questState: {questStatement.currentQuest}");
+                    dialogueManager.PlayDialogue();
+                    return;
+                }
+                dialogueManager.PlayDialogue();
+                Debug.Log($"current questState: {questStatement.currentQuest}");
+                break;
+            case QuestState.QuestComplete:
+                int nextQuestIndex = quests.IndexOf(questSO) + 1;
+                if (nextQuestIndex < quests.Count)
+                {
+                    questSO = quests[nextQuestIndex]; //nextQuestIndex это индекс квеста
+                    questStatement.currentQuest = QuestState.QuestNotActive;
+                }
+                Debug.Log($"current questState: {questStatement.currentQuest}");
+                break;
         }
-
-        Debug.Log("Требуемый предмет не найден!");
     }
-    void QuestComplete()
-    {
-        currentQuest.isQuestActive = false;
-        currentQuest.isQuestCompleted = true;
-        Debug.Log("Квест завершен!");
-    }
-    //public bool RequiredItemSearch() //метод, который ищет нужный предмет в инвентаре
-    //{
-    //    if (currentQuest == null)
-    //    {
-    //        Debug.LogError("Ошибка: currentQuest не задан!");
-    //        return false;
-    //    }
-    //    if (inventory.slots == null || inventory.slots.Length == 0)
-    //    {
-    //        Debug.LogError("Ошибка: слоты инвентаря не найдены!");
-    //        return false;
-    //    }
-
-    //    for (int i = 0; i < inventory.slots.Length; i++)
-    //    {
-    //        if (inventory.slots[i].isFull && inventory.slots[i].itemName == currentQuest.requiredItem)
-    //        {
-    //            inventory.slots[i].isFull = false;
-    //            inventory.slots[i].itemName = "";
-    //            inventory.slots[i].itemIcon = null;
-
-    //            inventory.UpdateInventory();
-
-    //            currentQuest.isQuestCompleted = true;
-    //            Debug.Log("Предмет отдан!");
-    //            return true;
-    //        }
-    //    }
-    //    return false;
-    //}
 }

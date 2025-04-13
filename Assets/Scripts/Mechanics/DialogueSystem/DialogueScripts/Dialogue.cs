@@ -55,7 +55,6 @@ public class Dialogue : MonoBehaviour
     }
     public void StartDialogue(DialogueSO dialogue)
     {
-        Debug.Log("StartDialogue вызван!");
         if (isDialogueActive || dialogue == null)
             return;
 
