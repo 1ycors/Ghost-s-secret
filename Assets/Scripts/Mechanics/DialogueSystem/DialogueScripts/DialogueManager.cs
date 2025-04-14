@@ -20,25 +20,16 @@ public class DialogueManager : MonoBehaviour
             case NPCState.FirstMeeting:
                 dialogueScript.StartDialogue(npcStatement.firstMeetingDialogue);
                 npcStatement.currentState = NPCState.Default;
-                //Debug.Log($"current dialogue state: {npcStatement.currentState}");
                 break;
             case NPCState.QuestStart:
-                dialogueScript.StartDialogue(npcStatement.questStart);
-                npcStatement.currentState = NPCState.QuestInProgress;
-                //Debug.Log($"current dialogue state: {npcStatement.currentState}");
-                break;
-            case NPCState.QuestInProgress:
                 dialogueScript.StartDialogue(npcStatement.defaultDialogue);
-                //Debug.Log($"current dialogue state: {npcStatement.currentState}");
                 break;
             case NPCState.QuestComplete:
                 dialogueScript.StartDialogue(npcStatement.questComplete);
                 npcStatement.currentState = NPCState.Default;
-                //Debug.Log($"current dialogue state: {npcStatement.currentState}");
                 break;
             case NPCState.Default:
                 dialogueScript.StartDialogue(npcStatement.defaultDialogue);
-                //Debug.Log($"current dialogue state: {npcStatement.currentState}");
                 break;
         }
     }

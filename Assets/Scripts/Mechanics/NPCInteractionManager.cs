@@ -34,15 +34,10 @@ public class NPCInteractionManager : MonoBehaviour //был синглтон
                 dialogueManager.PlayDialogue();
                 questStatement.currentQuest = QuestState.QuestActive;
                 npcStatement.currentState = NPCState.QuestStart;
+                questSystem.QuestStart();
                 Debug.Log($"current questState: {questStatement.currentQuest}");
                 break;
             case QuestState.QuestActive:
-                dialogueManager.PlayDialogue();
-                questStatement.currentQuest = QuestState.QuestInProgress;
-                npcStatement.currentState = NPCState.QuestInProgress;
-                Debug.Log($"current questState: {questStatement.currentQuest}");
-                break;
-            case QuestState.QuestInProgress:
                 if (questSystem.RequiredItemSearch())
                 {
                     questStatement.currentQuest = QuestState.QuestComplete;
@@ -61,6 +56,7 @@ public class NPCInteractionManager : MonoBehaviour //был синглтон
                     questSO = quests[nextQuestIndex]; //nextQuestIndex это индекс квеста
                     questStatement.currentQuest = QuestState.QuestNotActive;
                 }
+                questSystem.QuestComplete();
                 Debug.Log($"current questState: {questStatement.currentQuest}");
                 break;
         }

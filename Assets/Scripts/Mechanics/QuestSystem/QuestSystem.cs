@@ -9,12 +9,12 @@ public class QuestSystem : MonoBehaviour
         currentQuest.isQuestActive = false;
         currentQuest.isQuestCompleted = false;
     }
-    void QuestStart()
+    public void QuestStart()
     {
         currentQuest.isQuestActive = true;
         Debug.Log(" вест началс€!");
     }
-    void QuestComplete()
+    public void QuestComplete()
     {
         currentQuest.isQuestActive = false;
         currentQuest.isQuestCompleted = true;

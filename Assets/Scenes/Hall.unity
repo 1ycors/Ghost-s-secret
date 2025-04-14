@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 198902706}
   - component: {fileID: 198902707}
   m_Layer: 0
-  m_Name: QuestManager
+  m_Name: NPCInteraction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1594,7 +1594,6 @@ MonoBehaviour:
   currentState: 0
   firstMeetingDialogue: {fileID: 11400000, guid: 2aad79dbbd6bf0348b08e7238c789d98, type: 2}
   defaultDialogue: {fileID: 11400000, guid: 32e4b4a9187ef63428e503b2757ad4d6, type: 2}
-  questStart: {fileID: 11400000, guid: 17d3f4b6be9013a4182a37a95e883a0f, type: 2}
   questComplete: {fileID: 11400000, guid: acca316ee6048bf4992857626a74fcc6, type: 2}
 --- !u!114 &919934617
 MonoBehaviour:
