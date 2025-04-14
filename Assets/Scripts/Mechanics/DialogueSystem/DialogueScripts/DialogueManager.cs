@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static NPCStatement;
 
-public class DialogueManager : Singleton<DialogueManager>
+public class DialogueManager : MonoBehaviour
 {
     public NPCStatement npcStatement;
     public Dialogue dialogueScript;

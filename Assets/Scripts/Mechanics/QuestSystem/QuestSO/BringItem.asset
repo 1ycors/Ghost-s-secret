@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BringItem
   m_EditorClassIdentifier: 
   questName: Bring Item
-  requiredItem: Egg
+  requiredItem: DiaryPage
   isQuestActive: 1
   isQuestCompleted: 1

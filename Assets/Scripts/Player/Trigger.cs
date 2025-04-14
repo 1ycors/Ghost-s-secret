@@ -5,16 +5,17 @@ public class Trigger : MonoBehaviour
 {
     public static event Action OnInteract;
     private bool npcDetected;
+    public DialogueManager dialogueManager;
 
     private void OnEnable() => InputCustom.OnEPressed += HandleInteraction;
     private void OnDisable() => InputCustom.OnEPressed -= HandleInteraction;
 
-    private void HandleInteraction() 
+    public void HandleInteraction() 
     {
-        if (DialogueManager.Instance == null || DialogueManager.Instance.dialogueScript == null)
+        if (dialogueManager == null || dialogueManager.dialogueScript == null)
             return;
 
-        if (DialogueManager.Instance.dialogueScript.isDialogueActive)
+        if (dialogueManager.dialogueScript.isDialogueActive)
             return;
 
         if (npcDetected)

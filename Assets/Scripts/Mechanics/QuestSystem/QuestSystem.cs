@@ -3,8 +3,6 @@ using UnityEngine;
 public class QuestSystem : MonoBehaviour
 {
     public QuestSO currentQuest;
-    public Inventory inventory;
-    public Trigger trigger;
 
     private void Start()
     {
@@ -47,21 +45,21 @@ public class QuestSystem : MonoBehaviour
             Debug.LogError("Ошибка: currentQuest не задан!");
             return false;
         }
-        if (inventory.slots == null || inventory.slots.Length == 0)
+        if (UIManager.Instance.inventory.slots == null || UIManager.Instance.inventory.slots.Length == 0)
         {
             Debug.LogError("Ошибка: слоты инвентаря не найдены!");
             return false;
         }
 
-        for (int i = 0; i < inventory.slots.Length; i++)
+        for (int i = 0; i < UIManager.Instance.inventory.slots.Length; i++)
         {
-            if (inventory.slots[i].isFull && inventory.slots[i].itemName == currentQuest.requiredItem)
+            if (UIManager.Instance.inventory.slots[i].isFull && UIManager.Instance.inventory.slots[i].itemName == currentQuest.requiredItem)
             {
-                inventory.slots[i].isFull = false;
-                inventory.slots[i].itemName = "";
-                inventory.slots[i].itemIcon = null;
+                UIManager.Instance.inventory.slots[i].isFull = false;
+                UIManager.Instance.inventory.slots[i].itemName = "";
+                UIManager.Instance.inventory.slots[i].itemIcon = null;
 
-                inventory.UpdateInventory();
+                UIManager.Instance.inventory.UpdateInventory();
 
                 currentQuest.isQuestCompleted = true;
                 Debug.Log("Предмет отдан!");

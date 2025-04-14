@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ab3a151f0b62704686abbf4ec1a3002, type: 3}
-  m_Name: Egg
+  m_Name: DiaryPage
   m_EditorClassIdentifier: 
-  itemName: Egg
-  itemIcon: {fileID: -239788145, guid: 2b4774de3bc0bf64893dd25909040dc7, type: 3}
+  itemName: DiaryPage
+  itemIcon: {fileID: -199007016, guid: c45d94ab0a56df3409dcb86453735e22, type: 3}

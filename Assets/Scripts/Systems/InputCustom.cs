@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class InputCustom : MonoBehaviour
+public class InputCustom : Singleton<InputCustom>
 {
     public static event Action OnEPressed;
 
