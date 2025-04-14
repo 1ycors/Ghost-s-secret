@@ -4,7 +4,7 @@ using UnityEngine;
 using static NPCStatement;
 using static QuestStatement;
 
-public class QuestManager : MonoBehaviour //был синглтон
+public class NPCInteractionManager : MonoBehaviour //был синглтон
 {
     public QuestStatement questStatement;
     public NPCStatement npcStatement;

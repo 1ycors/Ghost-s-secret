@@ -9,28 +9,10 @@ public class QuestSystem : MonoBehaviour
         currentQuest.isQuestActive = false;
         currentQuest.isQuestCompleted = false;
     }
-
-    private void OnEnable() => Trigger.OnInteract += QuestCheck;
-    private void OnDisable() => Trigger.OnInteract -= QuestCheck;
-
     void QuestStart()
     {
         currentQuest.isQuestActive = true;
         Debug.Log("Квест начался!");
-    }
-    void QuestCheck()
-    {
-        if (!currentQuest.isQuestActive)
-        {
-            QuestStart();
-            return;
-        }
-        if (currentQuest.isQuestActive && !currentQuest.isQuestCompleted && RequiredItemSearch())
-        {
-            QuestComplete();
-            return;
-        }
-        Debug.Log("Требуемый предмет не найден!");
     }
     void QuestComplete()
     {

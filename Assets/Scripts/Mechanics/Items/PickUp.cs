@@ -7,8 +7,8 @@ public class PickUp : MonoBehaviour
 
     private bool isPlayerNear;
     private void Awake()
-    { // Проверяем, был ли предмет уже подобран ранее
-        if (GameStateManager.IsItemPicked(itemID))
+    {
+        if (GameStateManager.Instance.IsItemPicked(itemID)) // Проверяем, был ли предмет уже подобран ранее
             gameObject.SetActive(false);
     }
     private void OnEnable() => InputCustom.OnEPressed += CheckUp;
@@ -36,7 +36,7 @@ public class PickUp : MonoBehaviour
     {
         if (UIManager.Instance.inventory.AddItem(item))
         {
-            GameStateManager.MarkItemAsPicked(itemID); // Сохраняем факт подбора
+            GameStateManager.Instance.MarkItemAsPicked(itemID); // Сохраняем факт подбора
             gameObject.SetActive(false);
         }
     }
