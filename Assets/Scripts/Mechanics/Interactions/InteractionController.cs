@@ -1,16 +1,20 @@
 using System;
 using UnityEngine;
 
-public class Trigger : MonoBehaviour
+public class InteractionController : MonoBehaviour
 {
     public static event Action OnInteract;
-    public bool npcDetected;
+    public Trigger trigger;
     public DialogueManager dialogueManager;
 
     private void OnEnable() => InputCustom.OnEPressed += HandleInteraction;
     private void OnDisable() => InputCustom.OnEPressed -= HandleInteraction;
 
-    public void HandleInteraction() 
+    private void Start()
+    {
+        trigger = Player.Instance.GetComponent<Trigger>();
+    }
+    public void HandleInteraction()
     {
         if (dialogueManager == null || dialogueManager.dialogueScript == null)
             return;
@@ -18,21 +22,7 @@ public class Trigger : MonoBehaviour
         if (dialogueManager.dialogueScript.isDialogueActive)
             return;
 
-        if (npcDetected)
+        if (trigger.npcDetected)
             OnInteract?.Invoke();
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("NPC")) 
-        {
-            npcDetected = true;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("NPC")) 
-        {
-            npcDetected = false;
-        }
     }
 }

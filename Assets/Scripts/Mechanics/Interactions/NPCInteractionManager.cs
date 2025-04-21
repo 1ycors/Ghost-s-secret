@@ -4,7 +4,7 @@ using UnityEngine;
 using static NPCStatement;
 using static QuestStatement;
 
-public class NPCInteractionManager : MonoBehaviour //был синглтон
+public class NPCInteractionManager : MonoBehaviour
 {
     public QuestStatement questStatement;
     public NPCStatement npcStatement;
@@ -12,17 +12,10 @@ public class NPCInteractionManager : MonoBehaviour //был синглтон
     public QuestSystem questSystem;
     public QuestSO questSO;
 
-    //создать список квестов.
     public List<QuestSO> quests = new List<QuestSO>();
 
-    private void OnEnable()
-    {
-        Trigger.OnInteract += CheckQuestStatus;
-    }
-    private void OnDisable()
-    {
-        Trigger.OnInteract -= CheckQuestStatus;
-    }
+    private void OnEnable() => InteractionController.OnInteract += CheckQuestStatus;
+    private void OnDisable() => InteractionController.OnInteract -= CheckQuestStatus;
     void CheckQuestStatus()
     {
         if (quests.Count == 0)
