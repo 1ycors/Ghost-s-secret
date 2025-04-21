@@ -8,8 +8,8 @@ public class DialogueManager : MonoBehaviour
     public NPCStatement npcStatement;
     public Dialogue dialogueScript;
 
-    private void OnEnable() => Trigger.OnInteract += PlayDialogue;
-    private void OnDisable() => Trigger.OnInteract -= PlayDialogue;
+    private void OnEnable() => InteractionController.OnInteract += PlayDialogue;
+    private void OnDisable() => InteractionController.OnInteract -= PlayDialogue;
 
     public void PlayDialogue()
     {
