@@ -7,6 +7,6 @@ public class QuestSO : ScriptableObject
     public string questName;
     public string requiredItem;
 
-    public bool isQuestActive = false;
-    public bool isQuestCompleted = false;
+    //public bool isQuestActive = false;
+    //public bool isQuestCompleted = false;
 }

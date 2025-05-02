@@ -3,23 +3,6 @@ using UnityEngine;
 public class QuestSystem : MonoBehaviour
 {
     public QuestSO currentQuest;
-
-    private void Start()
-    {
-        currentQuest.isQuestActive = false;
-        currentQuest.isQuestCompleted = false;
-    }
-    public void QuestStart()
-    {
-        currentQuest.isQuestActive = true;
-        Debug.Log("Квест начался!");
-    }
-    public void QuestComplete()
-    {
-        currentQuest.isQuestActive = false;
-        currentQuest.isQuestCompleted = true;
-        Debug.Log("Квест завершен!");
-    }
     public bool RequiredItemSearch() //метод, который ищет нужный предмет в инвентаре
     {
         if (currentQuest == null)
@@ -43,7 +26,6 @@ public class QuestSystem : MonoBehaviour
 
                 UIManager.Instance.inventory.UpdateInventory();
 
-                currentQuest.isQuestCompleted = true;
                 Debug.Log("Предмет отдан!");
                 return true;
             }

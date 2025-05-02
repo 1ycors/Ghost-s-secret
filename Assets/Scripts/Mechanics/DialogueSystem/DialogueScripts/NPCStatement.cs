@@ -5,7 +5,7 @@ public class NPCStatement : MonoBehaviour
     public enum NPCState
     {
         FirstMeeting,
-        Default,
+        DefaultState,
         QuestStart,
         QuestComplete
     }

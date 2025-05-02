@@ -6,7 +6,8 @@ public class QuestStatement : MonoBehaviour
     {
         QuestNotActive,
         QuestActive,
-        QuestComplete
+        QuestComplete,
+        AllQuestsDone
     }
     public QuestState currentQuest = QuestState.QuestNotActive;
 }

@@ -6,7 +6,7 @@ public class PickUp : MonoBehaviour
     [SerializeField] private string itemID; //уникальный айди дл€ сохранени€ состо€ни€
 
     private bool isPlayerNear;
-    private void Awake()
+    private void Start()
     {
         if (GameStateManager.Instance.IsItemPicked(itemID)) // ѕровер€ем, был ли предмет уже подобран ранее
             gameObject.SetActive(false);

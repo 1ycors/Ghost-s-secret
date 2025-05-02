@@ -1,9 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static QuestStatement;
+using static NPCStatement;
 
 public class GameStateManager : Singleton<GameStateManager>
 {
+    //нужен доступ к энам квеста
+    //информаци€ о количестве страниц дневников
+
+    private Dictionary<string, QuestState> questStates = new();
+    private NPCState npcState;
+    public void RegisterQuestState(string id, QuestState state) 
+    {
+        questStates[id] = state;
+        Debug.Log($" вест {id} зарегистрирован со статусом {state}");
+    }
+    public QuestState GetQuestState(string id) 
+    {
+        return questStates.TryGetValue(id, out var state) ? state : QuestState.QuestNotActive;
+    }
+    public void RegisterNPCState(NPCState state) 
+    {
+        npcState = state;
+    }
+    public NPCState GetNPCState() 
+    {
+        return npcState;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))

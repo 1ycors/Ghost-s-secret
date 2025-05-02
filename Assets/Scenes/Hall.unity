@@ -212,6 +212,52 @@ MonoBehaviour:
   questSO: {fileID: 11400000, guid: 94dd11f30975a714da82c0439d5710fd, type: 2}
   quests:
   - {fileID: 0}
+--- !u!1 &204224424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 204224425}
+  - component: {fileID: 204224426}
+  m_Layer: 0
+  m_Name: InteractionController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &204224425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204224424}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -597.0311, y: -207.40918, z: 13.888252}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 484728397}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &204224426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204224424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ac464d33b38a14caba32d1af895e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 493802794}
+  dialogueManager: {fileID: 1029012187}
 --- !u!1 &308250786
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +638,7 @@ Transform:
   - {fileID: 1509892879}
   - {fileID: 198902706}
   - {fileID: 1029012188}
+  - {fileID: 204224425}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &493802786
@@ -804,7 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378ea9ebed499aa409f7871389992687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 1029012187}
+  npcDetected: 0
 --- !u!70 &493802795
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
