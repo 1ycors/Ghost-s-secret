@@ -10,9 +10,18 @@ public class Inventory : MonoBehaviour
         slots = GetComponentsInChildren<InventorySlots>();
         UpdateInventory();
     }
-    public bool AddItem(QuestItem newItem)
+    public bool AddItem(QuestItemSO newItem)
     {
-        for (int i = 0; i < slots.Length; i++) //перебираем все слоты инвентаря
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].isFull && slots[i].storedItem != null && slots[i].storedItem.itemID == newItem.itemID)
+            {
+                slots[i].storedItem.stackSize++;
+                UpdateInventory();
+                return true;
+            }
+        }
+        for (int i = 0; i < slots.Length; i++)
         {
             if (!slots[i].isFull) //если слот пуст
             {
@@ -35,8 +44,8 @@ public class Inventory : MonoBehaviour
 
             if (slots[i].isFull && slotImage != null)
             {
-                slotImage.sprite = slots[i].itemIcon; //берем спрайт слота инвентаря и присвайваем ей иконку предмета
-                slotImage.enabled = true; //показываем иконку
+                slotImage.sprite = slots[i].itemIcon; //берем спрайт слота инвентаря и присваиваем ей иконку предмета
+                slotImage.enabled = true;
             }
             else if (slotImage != null) //если мы попали в этот блок, значит слот пуст, а значит убираем иконку
             {

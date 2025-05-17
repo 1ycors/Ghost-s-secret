@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float runningSpeed = 20f;
+    private float runningSpeed = 10f;
     private int lockCount = 0;
     public bool isLocked => lockCount > 0;
 

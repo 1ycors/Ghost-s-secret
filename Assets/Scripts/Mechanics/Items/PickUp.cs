@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    public QuestItem item;
-    [SerializeField] private string itemID; //уникальный айди для сохранения состояния
-
+    public QuestItemSO item;
     private bool isPlayerNear;
+    public string uniqueID; //индивидуальный айдишник
+
     private void Start()
     {
-        if (GameStateManager.Instance.IsItemPicked(itemID)) // Проверяем, был ли предмет уже подобран ранее
+        if (GameStateManager.Instance.IsItemPicked(uniqueID)) // Проверяем, был ли предмет уже подобран ранее
             gameObject.SetActive(false);
     }
     private void OnEnable() => InputCustom.OnEPressed += CheckUp;
@@ -16,16 +16,12 @@ public class PickUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
             isPlayerNear = true;
-        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
             isPlayerNear = false;
-        }
     }
     void CheckUp()
     {
@@ -36,8 +32,12 @@ public class PickUp : MonoBehaviour
     {
         if (UIManager.Instance.inventory.AddItem(item))
         {
-            GameStateManager.Instance.MarkItemAsPicked(itemID); // Сохраняем факт подбора
+            GameStateManager.Instance.MarkItemAsPicked(uniqueID); // Сохраняем факт подбора
             gameObject.SetActive(false);
         }
+    }
+    public bool IsTheSameItem(QuestItemSO other) 
+    {
+        return this.item.itemID == other.itemID;
     }
 }

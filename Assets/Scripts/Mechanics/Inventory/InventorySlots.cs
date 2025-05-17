@@ -7,6 +7,7 @@ public class InventorySlots : MonoBehaviour
 
     public string itemName;
     public Sprite itemIcon;
+    public QuestItemSO storedItem;
 
     public bool isFull = false;
 

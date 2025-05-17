@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b371b6dd9a31574c9eef7ae03b957c4, type: 3}
-  m_Name: BringItem
+  m_Script: {fileID: 11500000, guid: 9ab3a151f0b62704686abbf4ec1a3002, type: 3}
+  m_Name: 1GhostsDiary
   m_EditorClassIdentifier: 
-  questName: Bring Item
-  requiredItem: DiaryPage
-  itemNumber: 3
+  itemName: DiaryPage1
+  itemIcon: {fileID: -199007016, guid: c45d94ab0a56df3409dcb86453735e22, type: 3}
+  itemID: GhostsDiary
+  stackSize: 1

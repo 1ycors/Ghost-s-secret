@@ -3,6 +3,10 @@ using UnityEngine;
 public class QuestSystem : MonoBehaviour
 {
     public QuestSO currentQuest;
+    //метод который проверяет сколько страниц найдено и сравнивает с questItemNumber
+    //метод вызывается при интеракции с нпс
+    //если не находит достаточно страниц, то ничего не происходит и нпс выдает дефолтную реплику
+    //как только он находит нужное количество или больше при интеракции с нпс, то квест завершается и начинается катсцена
     public bool RequiredItemSearch() //метод, который ищет нужный предмет в инвентаре
     {
         if (currentQuest == null)
@@ -10,26 +14,31 @@ public class QuestSystem : MonoBehaviour
             Debug.LogError("Ошибка: currentQuest не задан!");
             return false;
         }
-        if (UIManager.Instance.inventory.slots == null || UIManager.Instance.inventory.slots.Length == 0)
+
+        var slots = UIManager.Instance.inventory.slots;
+        if (slots == null || slots.Length == 0)
         {
             Debug.LogError("Ошибка: слоты инвентаря не найдены!");
             return false;
         }
 
-        for (int i = 0; i < UIManager.Instance.inventory.slots.Length; i++)
+        int found = 0; //переменная счетчик. сколько нужных предметов найдено
+        for (int i = 0; i < slots.Length; i++)
         {
-            if (UIManager.Instance.inventory.slots[i].isFull && UIManager.Instance.inventory.slots[i].itemName == currentQuest.requiredItem)
+            var slot = slots[i]; //еще одна динамичная переменная куда помещаем значения слотов
+            if (slots[i].isFull && slots[i].itemName == currentQuest.requiredItem)
             {
-                UIManager.Instance.inventory.slots[i].isFull = false;
-                UIManager.Instance.inventory.slots[i].itemName = "";
-                UIManager.Instance.inventory.slots[i].itemIcon = null;
+                //UIManager.Instance.inventory.slots[i].isFull = false;
+                //UIManager.Instance.inventory.slots[i].itemName = "";
+                //UIManager.Instance.inventory.slots[i].itemIcon = null;
 
-                UIManager.Instance.inventory.UpdateInventory();
+                //UIManager.Instance.inventory.UpdateInventory();
 
-                Debug.Log("Предмет отдан!");
-                return true;
+                //Debug.Log("Предмет отдан!");
+                //return true;
+                found++;
             }
         }
-        return false;
+        return found >= currentQuest.questItemNumber;
     }
 }
