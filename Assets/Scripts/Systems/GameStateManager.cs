@@ -6,7 +6,7 @@ using static NPCStatement;
 
 public class GameStateManager : Singleton<GameStateManager>
 {
-    //нужен доступ к энам квеста
+    //TODO: нужен доступ к энам квеста
     //информация о количестве страниц дневников
 
     private Dictionary<string, QuestState> questStates = new();

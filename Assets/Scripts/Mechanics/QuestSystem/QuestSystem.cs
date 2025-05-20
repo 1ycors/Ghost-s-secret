@@ -23,10 +23,9 @@ public class QuestSystem : MonoBehaviour
         }
 
         int found = 0; //переменная счетчик. сколько нужных предметов найдено
-        for (int i = 0; i < slots.Length; i++)
+        foreach (var slot in slots)
         {
-            var slot = slots[i]; //еще одна динамичная переменная куда помещаем значения слотов
-            if (slots[i].isFull && slots[i].itemName == currentQuest.requiredItem)
+            if (slot.itemInstance.itemData.itemName == currentQuest.requiredItem)
             {
                 //UIManager.Instance.inventory.slots[i].isFull = false;
                 //UIManager.Instance.inventory.slots[i].itemName = "";

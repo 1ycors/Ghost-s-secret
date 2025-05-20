@@ -3,51 +3,76 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public InventorySlots[] slots = new InventorySlots[6];
+    public InventorySlots[] slots;
 
     private void Start()
     {
         slots = GetComponentsInChildren<InventorySlots>();
+        
         UpdateInventory();
     }
     public bool AddItem(QuestItemSO newItem)
     {
-        for (int i = 0; i < slots.Length; i++)
+        foreach (var slot in slots)
         {
-            if (slots[i].isFull && slots[i].storedItem != null && slots[i].storedItem.itemID == newItem.itemID)
+            if (slot.itemInstance != null && slot.itemInstance.itemData == null)
             {
-                slots[i].storedItem.stackSize++;
+                Debug.LogWarning($"Слот {slot.name} содержит пустой itemInstance. Удаляю.");
+                slot.itemInstance = null;
+            }
+        }
+        Debug.Log("Состояние слотов перед добавлением предмета:");
+        foreach (var slot in slots)
+        {
+            string itemID = slot.itemInstance?.itemData?.itemID ?? "null";
+            Debug.Log($"Слот {slot.name}: itemInstance = {slot.itemInstance != null}, itemID = {itemID}");
+        }
+        // Пытаемся найти слот с таким же предметом
+        foreach (var slot in slots)
+        {
+            Debug.Log("Слот: " + slot);
+            if (slot == null)
+            {
+                Debug.LogError("Слот в массиве slots равен NULL!");
+                continue;
+            }
+            if (slot.IsFull && slot.itemInstance.itemData.itemID == newItem.itemID)
+            {
+                slot.itemInstance.stackSize++;
                 UpdateInventory();
                 return true;
             }
         }
-        for (int i = 0; i < slots.Length; i++)
+        //ищем пустой слот
+        foreach (var slot in slots)
         {
-            if (!slots[i].isFull) //если слот пуст
+            Debug.Log("Слот: " + slot);
+            if (slot == null)
             {
-                slots[i].itemIcon = newItem.itemIcon;
-                slots[i].itemName = newItem.itemName;
-                slots[i].isFull = true;
-
+                Debug.LogError("ОШИБКА: один из элементов массива slots равен NULL!");
+                continue;
+            }
+            if (slot.itemInstance == null)
+            {
+                slot.itemInstance = new ItemInstance(newItem, 1);
                 UpdateInventory();
                 return true;
             }
         }
-        Debug.Log("Инвентарь полон!");
+        Debug.Log("Инвентарь полон.");
         return false;
     }
     public void UpdateInventory()
     {
-        for (int i = 0; i < slots.Length; i++)
+        foreach (var slot in slots)
         {
-            Image slotImage = slots[i].transform.Find("Icon").GetComponent<Image>(); // создаем переменную slotImage и передаем в нее image слота инвентаря
-
-            if (slots[i].isFull && slotImage != null)
+            Image slotImage = slot.transform.Find("Icon").GetComponent<Image>(); // создаем переменную slotImage и передаем в нее image слота инвентарь
+            if (slot.IsFull && slotImage != null)
             {
-                slotImage.sprite = slots[i].itemIcon; //берем спрайт слота инвентаря и присваиваем ей иконку предмета
+                slotImage.sprite = slot.itemInstance.itemData.itemIcon;
                 slotImage.enabled = true;
             }
-            else if (slotImage != null) //если мы попали в этот блок, значит слот пуст, а значит убираем иконку
+            else if (slotImage != null) 
             {
                 slotImage.sprite = null;
                 slotImage.enabled = false;
