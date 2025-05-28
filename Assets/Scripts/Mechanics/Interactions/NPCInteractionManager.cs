@@ -54,7 +54,7 @@ public class NPCInteractionManager : MonoBehaviour
                 Debug.Log($"current questState: {questStatement.currentQuest}");
                 break;
             case QuestState.QuestActive:
-                if (questSystem.RequiredItemSearch())
+                if (questSystem.RequiredItemsSearch())
                 {
                     questStatement.currentQuest = QuestState.QuestComplete;
                     QuestStateChanged();

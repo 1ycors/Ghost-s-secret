@@ -13,5 +13,19 @@ MonoBehaviour:
   m_Name: BringItem
   m_EditorClassIdentifier: 
   questName: Bring Item
-  requiredItem: DiaryPage
-  itemNumber: 3
+  requirements:
+  - item: {fileID: 11400000, guid: ee4717f6efed29442bf153392e74bf83, type: 2}
+    requiredStackSize: 2
+    isOptional: 0
+  - item: {fileID: 11400000, guid: acb6443885a6f5940990cbf534d24dee, type: 2}
+    requiredStackSize: 2
+    isOptional: 0
+  - item: {fileID: 11400000, guid: 16f6ba88cefcc534ebd2bf5b140a3bb1, type: 2}
+    requiredStackSize: 2
+    isOptional: 0
+  - item: {fileID: 11400000, guid: 89320bd8055d6884ba62a268d004346b, type: 2}
+    requiredStackSize: 2
+    isOptional: 0
+  - item: {fileID: 11400000, guid: 7b20db13e438c0c43956995cf9de2509, type: 2}
+    requiredStackSize: 2
+    isOptional: 0

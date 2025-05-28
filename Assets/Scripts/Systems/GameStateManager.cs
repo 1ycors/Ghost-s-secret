@@ -11,6 +11,19 @@ public class GameStateManager : Singleton<GameStateManager>
 
     private Dictionary<string, QuestState> questStates = new();
     private NPCState npcState;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetProgress();
+            Debug.Log("Прогресс сброшен!");
+        }
+    }
+    public void ResetProgress()
+    {
+        PlayerPrefs.DeleteAll();
+    }
     public void RegisterQuestState(string id, QuestState state) 
     {
         questStates[id] = state;
@@ -28,18 +41,6 @@ public class GameStateManager : Singleton<GameStateManager>
     {
         return npcState;
     }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetProgress();
-            Debug.Log("Прогресс сброшен!");
-        }
-    }
-    public void ResetProgress()
-    {
-        PlayerPrefs.DeleteAll(); 
-    }
     public void MarkItemAsPicked(string id) 
     {
         PlayerPrefs.SetInt("item_" + id, 1);
@@ -48,5 +49,14 @@ public class GameStateManager : Singleton<GameStateManager>
     public bool IsItemPicked(string id) 
     {
         return PlayerPrefs.GetInt("item_" + id, 0) == 1;
+    }
+    public void SetDoorState(string doorID, bool isOpen) 
+    {
+        PlayerPrefs.SetInt("door_" + doorID, isOpen ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+    public bool GetDoorState(string doorID) 
+    {
+        return PlayerPrefs.GetInt("door_" + doorID, 0) == 1;
     }
 }

@@ -18,4 +18,8 @@ public class InventorySlots : MonoBehaviour
             itemInstance = null;
         }
     }
+    public void Clear() 
+    {
+        itemInstance = null;
+    }
 }

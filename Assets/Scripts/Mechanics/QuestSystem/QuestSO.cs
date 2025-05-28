@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Quest", menuName = "Quest/QuestSO")]
@@ -5,6 +6,13 @@ public class QuestSO : ScriptableObject
 {
     [TextArea(1, 5)]
     public string questName;
-    public string requiredItem;
-    public int questItemNumber = 3;
+
+    [System.Serializable]
+    public class QuestRequirement 
+    {
+        public QuestItemSO item;
+        public int requiredStackSize;
+        public bool isOptional = false;
+    }
+    public List<QuestRequirement> requirements = new List<QuestRequirement>();
 }
