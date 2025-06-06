@@ -7,10 +7,6 @@ public class DialogueManager : MonoBehaviour
 {
     public NPCStatement npcStatement;
     public Dialogue dialogueScript;
-
-    private void OnEnable() => InteractionController.OnInteract += PlayDialogue;
-    private void OnDisable() => InteractionController.OnInteract -= PlayDialogue;
-
     public void PlayDialogue()
     {
         if (dialogueScript.isDialogueActive) return;
@@ -26,7 +22,6 @@ public class DialogueManager : MonoBehaviour
                 break;
             case NPCState.QuestComplete:
                 dialogueScript.StartDialogue(npcStatement.questComplete);
-                //npcStatement.currentState = NPCState.DefaultState;
                 break;
             case NPCState.DefaultState:
                 dialogueScript.StartDialogue(npcStatement.defaultDialogue);

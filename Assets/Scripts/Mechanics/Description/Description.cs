@@ -27,17 +27,15 @@ public class Description : MonoBehaviour
         if (playerMovement == null)
             Debug.LogError("PlayerMovement не найден!");
     }
-    //private void OnEnable() => PickUp.OnPlayerInteraction += TryActivedPanel;
-    //private void OnDisable() => PickUp.OnPlayerInteraction -= TryActivedPanel;
-
     private void ToggleWindow(bool show)
     {
         window.SetActive(show);
     }
-    private void TryActivedPanel()
+    public void StartDescription(DescripSO newDescrip)
     {
         if (!isPanelActive)
         {
+            currentDescrip = newDescrip;
             PanelActive();
         }
         else if (waitForNext)
@@ -51,7 +49,7 @@ public class Description : MonoBehaviour
                 PanelDisactive();
         }
     }
-    private void PanelActive() 
+    public void PanelActive()
     {
         ToggleWindow(true);
         isPanelActive = true;
@@ -77,12 +75,14 @@ public class Description : MonoBehaviour
         }
         waitForNext = true;
     }
+    public void ShowMessage(string message) 
+    {
+        Debug.Log(message);
+    }
     private void PanelDisactive() 
     {
         isPanelActive = false;
         ToggleWindow(false);
-
-        if (!isPanelActive)
-            playerMovement.UnlockMovement();
+        playerMovement.UnlockMovement();
     }
 }

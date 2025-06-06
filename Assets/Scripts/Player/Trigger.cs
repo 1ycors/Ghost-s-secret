@@ -3,20 +3,23 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    public bool npcDetected;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public IInteractable currentInteractable;
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("NPC")) 
+        if (other.TryGetComponent<IInteractable>(out var interactable))
         {
-            npcDetected = true;
+            currentInteractable = interactable;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (collision.CompareTag("NPC")) 
+        if (other.TryGetComponent<IInteractable>(out var interactable) && interactable == currentInteractable) 
         {
-            npcDetected = false;
+            currentInteractable = null;
         }
+    }
+    public void Interact() 
+    {
+        currentInteractable?.Interact();
     }
 }

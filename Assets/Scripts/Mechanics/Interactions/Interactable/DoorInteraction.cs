@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorInteraction: MonoBehaviour
+public class DoorInteraction: MonoBehaviour, IInteractable
 {
     public QuestItemSO requiredKey;
-    private bool playerDetected;
     private BoxCollider2D cldr;
     private void Start()
     {
@@ -14,31 +13,18 @@ public class DoorInteraction: MonoBehaviour
         if (GameStateManager.Instance.GetDoorState("MaidsRoom"))
             cldr.enabled = true;
     }
-    private void OnEnable() => InputCustom.OnEPressed += TryOpenTheDoor;
-    private void OnDisable() => InputCustom.OnEPressed -= TryOpenTheDoor;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Interact()
     {
-        if (collision.CompareTag("Player"))
-            playerDetected = true;
+        SearchKey();
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-            playerDetected = false;
-    }
-    private void TryOpenTheDoor() 
-    {
-        if (playerDetected)
-            SearchItem();
-    }
-    public bool SearchItem()
+    private bool SearchKey()
     {
         Debug.Log("Ищем ключ...");
         var slots = UIManager.Instance.inventory.slots;
         if (slots == null || slots.Length == 0)
         {
             Debug.LogError("Ошибка: слоты инвентаря не найдены!");
+            InteractionController.Instance.FinishInteraction();
             return false;
         }
         foreach (var slot in slots)
@@ -48,7 +34,6 @@ public class DoorInteraction: MonoBehaviour
                 Debug.Log("Ключа нет");
                 continue;
             }
-
             if (slot.itemInstance.itemData.itemID == requiredKey.itemID)
             {
                 slot.Clear();
@@ -57,10 +42,12 @@ public class DoorInteraction: MonoBehaviour
                 cldr.enabled = true;
 
                 Debug.Log("Дверь открыта!");
+                InteractionController.Instance.FinishInteraction();
                 return true;
             }
         }
         Debug.Log("Нужен ключ");
+        InteractionController.Instance.FinishInteraction();
         return false;
     }
 }

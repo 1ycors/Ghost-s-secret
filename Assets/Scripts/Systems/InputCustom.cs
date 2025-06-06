@@ -8,6 +8,9 @@ public class InputCustom : Singleton<InputCustom>
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
+        {
             OnEPressed?.Invoke();
+            Debug.Log("Е нажата");
+        }
     }
 }

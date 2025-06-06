@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class PickUp : MonoBehaviour
+public class PickUp : MonoBehaviour, IInteractable
 {
     public QuestItemSO item;
-    private bool isPlayerNear;
+    //private bool isPlayerNear;
     public string uniqueID; //индивидуальный айдишник
 
     private void Start()
@@ -11,22 +11,9 @@ public class PickUp : MonoBehaviour
         if (GameStateManager.Instance.IsItemPicked(uniqueID)) // Проверяем, был ли предмет уже подобран ранее
             gameObject.SetActive(false);
     }
-    private void OnEnable() => InputCustom.OnEPressed += CheckUp;
-    private void OnDisable() => InputCustom.OnEPressed -= CheckUp;
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Interact() 
     {
-        if (other.CompareTag("Player"))
-            isPlayerNear = true;
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-            isPlayerNear = false;
-    }
-    void CheckUp()
-    {
-        if (isPlayerNear)
-            TryAddItem();
+        TryAddItem();
     }
     void TryAddItem()
     {
@@ -36,8 +23,8 @@ public class PickUp : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    public bool IsTheSameItem(QuestItemSO other) 
-    {
-        return this.item.itemID == other.itemID;
-    }
+    //public bool IsTheSameItem(QuestItemSO other) 
+    //{
+    //    return this.item.itemID == other.itemID;
+    //}
 }

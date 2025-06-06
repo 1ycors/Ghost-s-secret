@@ -4,9 +4,7 @@ public class QuestSystem : MonoBehaviour
 {
     public QuestSO currentQuest;
     public QuestItemSO itemSO;
-    //берем айди предмета из слота и сравниваем его с SO и количеством страниц
-    //то есть словарь на словарь
-    public bool RequiredItemsSearch() //метод, который ищет нужный предмет в инвентаре
+    public bool RequiredItemsSearch()
     {
         if (currentQuest == null)
         {
@@ -20,32 +18,6 @@ public class QuestSystem : MonoBehaviour
             Debug.LogError("Ошибка: слоты инвентаря не найдены!");
             return false;
         }
-
-        //int found = 0; //переменная счетчик. сколько нужных предметов найдено
-        //foreach (var slot in slots)
-        //{
-        //    if (/*slot.itemInstance.itemData.itemName == currentQuest.requirements.*/)
-        //    {
-        //        //UIManager.Instance.inventory.slots[i].isFull = false;
-        //        //UIManager.Instance.inventory.slots[i].itemName = "";
-        //        //UIManager.Instance.inventory.slots[i].itemIcon = null;
-
-        //        //UIManager.Instance.inventory.UpdateInventory();
-
-        //        //Debug.Log("Предмет отдан!");
-        //        //return true;
-        //        found++;
-        //    }
-        //}
-        //return found >= currentQuest.requirements.Count;
-        //foreach (var slot in slots)
-        //{
-        //    if (slot.itemInstance.itemData.itemID == itemSO.itemID && slot.itemInstance.stackSize == currentQuest.requirements.Count)
-        //    {
-        //        found++;
-        //    }
-        //}
-        //return found >= currentQuest.requirements.Count;
         foreach (var requirement in currentQuest.requirements)
         {
             if (requirement.isOptional)

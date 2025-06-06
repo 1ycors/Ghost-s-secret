@@ -4,11 +4,9 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public InventorySlots[] slots;
-
     private void Start()
     {
         slots = GetComponentsInChildren<InventorySlots>();
-        
         UpdateInventory();
     }
     public bool AddItem(QuestItemSO newItem)
@@ -30,7 +28,6 @@ public class Inventory : MonoBehaviour
         // Пытаемся найти слот с таким же предметом
         foreach (var slot in slots)
         {
-            Debug.Log("Слот: " + slot);
             if (slot == null)
             {
                 Debug.LogError("Слот в массиве slots равен NULL!");
@@ -46,7 +43,6 @@ public class Inventory : MonoBehaviour
         //ищем пустой слот
         foreach (var slot in slots)
         {
-            Debug.Log("Слот: " + slot);
             if (slot == null)
             {
                 Debug.LogError("ОШИБКА: один из элементов массива slots равен NULL!");

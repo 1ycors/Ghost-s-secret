@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   itemName: Key
-  itemIcon: {fileID: -239788145, guid: 2b4774de3bc0bf64893dd25909040dc7, type: 3}
+  itemIcon: {fileID: 1165552078, guid: cdf88fc621e439b47ac85810a9082313, type: 3}
   itemID: Key
