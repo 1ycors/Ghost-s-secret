@@ -9,5 +9,6 @@ public class DescripObject : MonoBehaviour, IInteractable
     {
         Debug.Log("Срабатывание Interact в DescripObject");
         UIManager.Instance.description.StartDescription(descripSO);
+        InteractionController.Instance.FinishInteraction();
     }
 }

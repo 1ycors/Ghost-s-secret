@@ -4,8 +4,8 @@ using UnityEngine;
 public class InteractionController : Singleton<InteractionController>
 {
     public Trigger trigger;
+
     public bool IsInteracting { get; private set; }
-    //public DialogueManager dialogueManager;
 
     private void OnEnable() => InputCustom.OnEPressed += HandleInteraction;
     private void OnDisable() => InputCustom.OnEPressed -= HandleInteraction;
@@ -16,10 +16,15 @@ public class InteractionController : Singleton<InteractionController>
     }
     public void HandleInteraction()
     {
-        if (IsInteracting)
+        if (IsInteracting) 
+        {
+            UIManager.Instance.description.Continue();
+            Debug.Log("Срабатывание Continue из контроллера");
             return;
+        }
 
-        if (trigger.currentInteractable != null) {
+        if (trigger.currentInteractable != null) 
+        {
             trigger.Interact();
             IsInteracting = true;
             Debug.Log("Срабатывание Интеракта из контроллера");
@@ -28,5 +33,6 @@ public class InteractionController : Singleton<InteractionController>
     public void FinishInteraction() 
     {
         IsInteracting = false;
+        Debug.Log("Срабатывание FinishInteraction из контроллера");
     }
 }

@@ -23,7 +23,6 @@ public class SceneController : Singleton<SceneController>
                 break;
             }
         }
-
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

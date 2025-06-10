@@ -3,7 +3,6 @@ using UnityEngine;
 public class PickUp : MonoBehaviour, IInteractable
 {
     public QuestItemSO item;
-    //private bool isPlayerNear;
     public string uniqueID; //индивидуальный айдишник
 
     private void Start()
@@ -22,9 +21,6 @@ public class PickUp : MonoBehaviour, IInteractable
             GameStateManager.Instance.MarkItemAsPicked(uniqueID); // Сохраняем факт подбора
             gameObject.SetActive(false);
         }
+        InteractionController.Instance.FinishInteraction();
     }
-    //public bool IsTheSameItem(QuestItemSO other) 
-    //{
-    //    return this.item.itemID == other.itemID;
-    //}
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -9,11 +10,11 @@ public class Description : MonoBehaviour
 
     private PlayerMovement playerMovement;
     private DescripSO currentDescrip;
+    private Action onComplete;
+    private int index;
+    private bool isWriting;
 
     private float writingSpeed = 0.01f;
-    public bool isPanelActive;
-    private int index;
-    private bool waitForNext;
 
     private void Awake()
     {
@@ -31,58 +32,61 @@ public class Description : MonoBehaviour
     {
         window.SetActive(show);
     }
-    public void StartDescription(DescripSO newDescrip)
+    public void StartDescription(DescripSO newDescrip, Action onComplete = null)
     {
-        if (!isPanelActive)
-        {
-            currentDescrip = newDescrip;
-            PanelActive();
-        }
-        else if (waitForNext)
-        {
-            waitForNext = false;
-            index++;
+        if (window.activeSelf) return;
 
-            if (index < currentDescrip.descripLines.Length)
-                GetDescrip(index);
-            else
-                PanelDisactive();
-        }
-    }
-    public void PanelActive()
-    {
-        ToggleWindow(true);
-        isPanelActive = true;
+        this.onComplete = onComplete;
+        currentDescrip = newDescrip;
         index = 0;
+        ToggleWindow(true);
+        playerMovement.LockMovement();
 
-        GetDescrip(index);
-        if (isPanelActive)
-            playerMovement.LockMovement();
-
+        ShowCurrentLine();
     }
-    private void GetDescrip(int i) 
+    private void ShowCurrentLine()
     {
-        string line = currentDescrip.descripLines[i];
-        descriptionText.text = string.Empty;
+        string line = currentDescrip.descripLines[index];
         StartCoroutine(Writing(line));
     }
-    IEnumerator Writing(string line)
+    private IEnumerator Writing(string line)
     {
+        isWriting = true;
+        descriptionText.text = string.Empty;
+
         foreach (char letter in line)
         {
             descriptionText.text += letter;
             yield return new WaitForSeconds(writingSpeed);
         }
-        waitForNext = true;
+        isWriting = false;
     }
     public void ShowMessage(string message) 
     {
         Debug.Log(message);
     }
-    private void PanelDisactive() 
+    public void Continue()
     {
-        isPanelActive = false;
-        ToggleWindow(false);
-        playerMovement.UnlockMovement();
+        if (isWriting) return;
+
+        index++;
+        if (index < currentDescrip.descripLines.Length)
+        {
+            ShowCurrentLine();
+        }
+        else 
+        {
+            ToggleWindow(false);
+            playerMovement?.UnlockMovement();
+            onComplete?.Invoke();
+            FinishDescription();
+        }
+    }
+    public void FinishDescription() 
+    {
+        isWriting = false;
+        index = 0;
+        isWriting = false;
+        InteractionController.Instance.FinishInteraction();
     }
 }

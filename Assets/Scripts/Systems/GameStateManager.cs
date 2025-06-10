@@ -6,7 +6,6 @@ using static NPCStatement;
 
 public class GameStateManager : Singleton<GameStateManager>
 {
-    //TODO: нужен доступ к энам квеста
     //информация о количестве страниц дневников
 
     private Dictionary<string, QuestState> questStates = new();
@@ -58,5 +57,14 @@ public class GameStateManager : Singleton<GameStateManager>
     public bool GetDoorState(string doorID) 
     {
         return PlayerPrefs.GetInt("door_" + doorID, 0) == 1;
+    }
+    public void MarkObjectAsInteracted(string objectName, bool isActive) 
+    {
+        PlayerPrefs.SetInt("object_" + objectName, isActive? 1 : 0);
+        PlayerPrefs.Save();
+    }
+    public bool IsObjectMarked(string objectName) 
+    {
+        return PlayerPrefs.GetInt("object_" + objectName, 0) == 1;
     }
 }
