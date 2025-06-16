@@ -8,7 +8,9 @@ public class FireplaceInteraction : MonoBehaviour, IInteractable
     public QuestItemSO requiredKey;
     public DescripSO firstSO;
     public DescripSO secondSO;
+
     private bool isMarked = false;
+    private bool isChoiceActive = false;
     private void Start()
     {
         if (GameStateManager.Instance.IsObjectMarked("Fireplace"))
@@ -16,13 +18,19 @@ public class FireplaceInteraction : MonoBehaviour, IInteractable
     }
     public void Interact() 
     {
+        if (InteractionController.Instance.IsInteracting || isChoiceActive)
+        {
+            Debug.Log("Попытка взаимодействовать во время активной интеракции");
+            return;
+        }
+
         if (isMarked) 
         {
             UIManager.Instance.description.StartDescription(secondSO);
-            InteractionController.Instance.FinishInteraction();
         }
-        else 
+        else
         {
+            isChoiceActive = true;
             UIManager.Instance.description.StartDescription(firstSO, () =>
                 UIManager.Instance.choicePanel.Show("Подобрать?", (bool isYes) =>
                 {
@@ -37,10 +45,10 @@ public class FireplaceInteraction : MonoBehaviour, IInteractable
                     {
                         UIManager.Instance.description.ShowMessage("Вы решили не трогать предмет.");
                     }
+                    isChoiceActive = false;
                     InteractionController.Instance.FinishInteraction();
                 })
             );
         }
-        
     }
 }

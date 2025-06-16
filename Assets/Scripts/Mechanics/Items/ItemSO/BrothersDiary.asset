@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab3a151f0b62704686abbf4ec1a3002, type: 3}
   m_Name: BrothersDiary
   m_EditorClassIdentifier: 
-  itemName: BrothersDiaryPage
-  itemIcon: {fileID: 0}
+  itemName: "\u0421\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u0434\u043D\u0435\u0432\u043D\u0438\u043A\u0430
+    \u0431\u0440\u0430\u0442\u0430"
+  itemIcon: {fileID: -793575407, guid: c45d94ab0a56df3409dcb86453735e22, type: 3}
   itemID: BrothersDiary

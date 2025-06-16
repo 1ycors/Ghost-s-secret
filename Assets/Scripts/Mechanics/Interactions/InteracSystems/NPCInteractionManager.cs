@@ -40,6 +40,7 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
                 npcStatement.currentState = NPCState.QuestStart;
                 NPCStateChanged();
                 Debug.Log($"current questState: {questStatement.currentQuest}");
+                UIManager.Instance.questUI.ActivateUI();
                 break;
             case QuestState.QuestActive:
                 if (questSystem.RequiredItemsSearch())

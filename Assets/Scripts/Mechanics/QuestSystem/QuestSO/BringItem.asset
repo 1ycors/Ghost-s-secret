@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b371b6dd9a31574c9eef7ae03b957c4, type: 3}
   m_Name: BringItem
   m_EditorClassIdentifier: 
-  questName: Bring Item
+  questName: "\u041D\u0430\u0439\u0442\u0438 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B
+    \u0434\u043D\u0435\u0432\u043D\u0438\u043A\u043E\u0432"
   requirements:
   - item: {fileID: 11400000, guid: ee4717f6efed29442bf153392e74bf83, type: 2}
     requiredStackSize: 2
@@ -28,4 +29,4 @@ MonoBehaviour:
     isOptional: 0
   - item: {fileID: 11400000, guid: 7b20db13e438c0c43956995cf9de2509, type: 2}
     requiredStackSize: 2
-    isOptional: 0
+    isOptional: 1

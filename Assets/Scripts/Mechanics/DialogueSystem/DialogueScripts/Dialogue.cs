@@ -28,8 +28,13 @@ public class Dialogue : MonoBehaviour
 
         if (playerMovement == null)
             Debug.LogError("PlayerMovement не найден!");
-    }
 
+        InteractionController.onContinue += TryAdvanceDialogue;
+    }
+    private void OnDestroy()
+    {
+        InteractionController.onContinue -= TryAdvanceDialogue;
+    }
     private void OnEnable() => InputCustom.OnEPressed += TryAdvanceDialogue;
     private void OnDisable() => InputCustom.OnEPressed -= TryAdvanceDialogue;
 
@@ -55,8 +60,9 @@ public class Dialogue : MonoBehaviour
     }
     public void StartDialogue(DialogueSO dialogue)
     {
-        if (isDialogueActive || dialogue == null)
-            return;
+        if (isDialogueActive || dialogue == null) return;
+
+        InteractionController.Instance.StartInteraction();
 
         isDialogueActive = true;
         currentDialogue = dialogue;
@@ -89,6 +95,8 @@ public class Dialogue : MonoBehaviour
         ToggleWindow(false);
         waitForNext = false;
         isDialogueActive = false;
+
+        InteractionController.Instance.FinishInteraction();
 
         if (!isDialogueActive)
             playerMovement.UnlockMovement();

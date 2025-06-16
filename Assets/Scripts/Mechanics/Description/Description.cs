@@ -27,6 +27,12 @@ public class Description : MonoBehaviour
 
         if (playerMovement == null)
             Debug.LogError("PlayerMovement не найден!");
+
+        InteractionController.onContinue += ContinueDescription;
+    }
+    private void OnDestroy()
+    {
+        InteractionController.onContinue -= ContinueDescription;
     }
     private void ToggleWindow(bool show)
     {
@@ -34,10 +40,14 @@ public class Description : MonoBehaviour
     }
     public void StartDescription(DescripSO newDescrip, Action onComplete = null)
     {
-        if (window.activeSelf) return;
+        if (window.activeSelf || newDescrip == null || InteractionController.Instance.IsInteracting)
+            return;
+
+        InteractionController.Instance.StartInteraction();
 
         this.onComplete = onComplete;
         currentDescrip = newDescrip;
+
         index = 0;
         ToggleWindow(true);
         playerMovement.LockMovement();
@@ -65,8 +75,10 @@ public class Description : MonoBehaviour
     {
         Debug.Log(message);
     }
-    public void Continue()
+    public void ContinueDescription()
     {
+        if (currentDescrip == null) return;
+
         if (isWriting) return;
 
         index++;
@@ -74,7 +86,7 @@ public class Description : MonoBehaviour
         {
             ShowCurrentLine();
         }
-        else 
+        else
         {
             ToggleWindow(false);
             playerMovement?.UnlockMovement();
@@ -84,7 +96,6 @@ public class Description : MonoBehaviour
     }
     public void FinishDescription() 
     {
-        isWriting = false;
         index = 0;
         isWriting = false;
         InteractionController.Instance.FinishInteraction();

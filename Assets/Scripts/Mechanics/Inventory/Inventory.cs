@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public InventorySlots[] slots;
+
+    public static event Action<QuestItemSO> ItemAdded;
     private void Start()
     {
         slots = GetComponentsInChildren<InventorySlots>();
@@ -37,6 +40,7 @@ public class Inventory : MonoBehaviour
             {
                 slot.itemInstance.stackSize++;
                 UpdateInventory();
+                ItemAdded?.Invoke(newItem);
                 return true;
             }
         }
@@ -52,6 +56,7 @@ public class Inventory : MonoBehaviour
             {
                 slot.itemInstance = new ItemInstance(newItem, 1);
                 UpdateInventory();
+                ItemAdded?.Invoke(newItem);
                 return true;
             }
         }
