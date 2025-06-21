@@ -8,4 +8,5 @@ public class UIManager : Singleton<UIManager>
     public Description description;
     public ChoicePanel choicePanel;
     public QuestUI questUI;
+    public PageUI pageUI;
 }

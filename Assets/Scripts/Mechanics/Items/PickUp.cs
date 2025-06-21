@@ -3,11 +3,10 @@ using UnityEngine;
 public class PickUp : MonoBehaviour, IInteractable
 {
     public QuestItemSO item;
-    public string uniqueID; //индивидуальный айдишник
 
     private void Start()
     {
-        if (GameStateManager.Instance.IsItemPicked(uniqueID)) // Проверяем, был ли предмет уже подобран ранее
+        if (GameStateManager.Instance.IsItemPicked(item.uniqueID)) // Проверяем, был ли предмет уже подобран ранее
             gameObject.SetActive(false);
     }
     public void Interact() 
@@ -18,8 +17,12 @@ public class PickUp : MonoBehaviour, IInteractable
     {
         if (UIManager.Instance.inventory.AddItem(item))
         {
-            GameStateManager.Instance.MarkItemAsPicked(uniqueID); // Сохраняем факт подбора
+            GameStateManager.Instance.MarkItemAsPicked(item.uniqueID); // Сохраняем факт подбора
             gameObject.SetActive(false);
+            if (item is ReadableQuestItemSO itemSO)
+            {
+                UIManager.Instance.pageUI.ShowPage(itemSO);
+            }
         }
         InteractionController.Instance.FinishInteraction();
     }

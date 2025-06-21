@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Key
   itemIcon: {fileID: 1165552078, guid: cdf88fc621e439b47ac85810a9082313, type: 3}
   itemID: Key
+  uniqueID: DoorKey
