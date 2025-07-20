@@ -9,4 +9,5 @@ public class UIManager : Singleton<UIManager>
     public ChoicePanel choicePanel;
     public QuestUI questUI;
     public PageUI pageUI;
+    public FinalChoice finalChoice;
 }

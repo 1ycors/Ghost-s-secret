@@ -32,7 +32,7 @@ public class QuestSystem : MonoBehaviour
                 if (item == null)
                     continue;
 
-                if (item == requirement.item && slot.itemInstance.stackSize >= requirement.requiredStackSize)
+                if (item.itemID == requirement.itemID && slot.itemInstance.stackSize >= requirement.requiredStackSize)
                 {
                     matchFound = true;
                     break;

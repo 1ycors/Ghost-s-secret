@@ -8,9 +8,10 @@ public class QuestSO : ScriptableObject
     public string questName;
 
     [System.Serializable]
-    public class QuestRequirement 
+    public class QuestRequirement
     {
         public QuestItemSO item;
+        public string itemID;
         public int requiredStackSize;
         public bool isOptional = false;
     }

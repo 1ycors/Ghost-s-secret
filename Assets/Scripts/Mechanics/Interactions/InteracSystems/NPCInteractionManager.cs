@@ -50,7 +50,9 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
                     npcStatement.currentState = NPCState.QuestComplete; 
                     NPCStateChanged();
                     Debug.Log($"current questState: {questStatement.currentQuest}");
-                    dialogueManager.PlayDialogue();
+                    //dialogueManager.PlayDialogue();
+                    UIManager.Instance.finalChoice.StartFinalChoice();
+                    Debug.Log("¬€«€¬¿≈Ã StartFinalChoice »« Õœ—»Õ“≈–¿ ÿÕ");
                     return;
                 }
                 dialogueManager.PlayDialogue();
@@ -61,7 +63,7 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
                 QuestStateChanged();
                 npcStatement.currentState = NPCState.DefaultState;
                 NPCStateChanged();
-                dialogueManager.PlayDialogue();
+                //dialogueManager.PlayDialogue();
                 Debug.Log($"current questState: {questStatement.currentQuest}");
                 break;
             case QuestState.AllQuestsDone:

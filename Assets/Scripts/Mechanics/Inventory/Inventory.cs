@@ -18,7 +18,7 @@ public class Inventory : MonoBehaviour
         {
             if (slot.itemInstance != null && slot.itemInstance.itemData == null)
             {
-                Debug.LogWarning($"Слот {slot.name} содержит пустой itemInstance. Удаляю.");
+                //Debug.LogWarning($"Слот {slot.name} содержит пустой itemInstance. Удаляю.");
                 slot.itemInstance = null;
             }
         }
@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
         foreach (var slot in slots)
         {
             string itemID = slot.itemInstance?.itemData?.itemID ?? "null";
-            Debug.Log($"Слот {slot.name}: itemInstance = {slot.itemInstance != null}, itemID = {itemID}");
+            //Debug.Log($"Слот {slot.name}: itemInstance = {slot.itemInstance != null}, itemID = {itemID}");
         }
         // Пытаемся найти слот с таким же предметом
         foreach (var slot in slots)
