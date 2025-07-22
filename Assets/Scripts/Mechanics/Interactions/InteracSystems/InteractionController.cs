@@ -5,7 +5,7 @@ public class InteractionController : Singleton<InteractionController>
 {
     public Trigger trigger;
     public bool IsInteracting { get; private set; }
-    public static event Action onContinue;
+    public static event Action OnContinue;
 
     private void OnEnable() => InputCustom.OnEPressed += HandleInteraction;
     private void OnDisable() => InputCustom.OnEPressed -= HandleInteraction;
@@ -18,7 +18,7 @@ public class InteractionController : Singleton<InteractionController>
     {
         if (IsInteracting) 
         {
-            onContinue?.Invoke();
+            OnContinue?.Invoke();
             return;
         }
 

@@ -1332,7 +1332,6 @@ GameObject:
   - component: {fileID: 493802787}
   - component: {fileID: 493802792}
   - component: {fileID: 493802795}
-  - component: {fileID: 493802790}
   - component: {fileID: 493802793}
   - component: {fileID: 493802794}
   m_Layer: 0
@@ -1436,18 +1435,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &493802790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493802786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74173ebf4e7d45f4c858a10a43c4251c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &493802791
 Animator:
   serializedVersion: 5
@@ -1516,6 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d46c5de89477f40919a3477795cfb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runningSpeed: 10
 --- !u!114 &493802794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1741,9 +1729,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.14677104
+    width: 0.99999994
+    height: 0.704501
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34

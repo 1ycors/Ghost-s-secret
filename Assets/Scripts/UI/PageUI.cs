@@ -23,12 +23,12 @@ public class PageUI : MonoBehaviour
     {
         window.SetActive(true);
         pageText.text = itemSO.readableText;
-        Player.Instance.GetComponent<PlayerMovement>()?.LockMovement();
+        Player.Instance.LockMovement();
     }
     public void ClosePage() 
     {
         window.SetActive(false);
         pageText.text = "";
-        Player.Instance.GetComponent<PlayerMovement>()?.UnlockMovement();
+        Player.Instance.UnlockMovement();
     }
 }

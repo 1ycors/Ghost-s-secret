@@ -8,7 +8,6 @@ public class Description : MonoBehaviour
     public GameObject window;
     public TMP_Text descriptionText;
 
-    private PlayerMovement playerMovement;
     private DescripSO currentDescrip;
     private Action onComplete;
     private int index;
@@ -22,17 +21,11 @@ public class Description : MonoBehaviour
     }
     private void Start()
     {
-        if (Player.Instance != null)
-            playerMovement = Player.Instance.GetComponent<PlayerMovement>();
-
-        if (playerMovement == null)
-            Debug.LogError("PlayerMovement не найден!");
-
-        InteractionController.onContinue += ContinueDescription;
+        InteractionController.OnContinue += ContinueDescription;
     }
     private void OnDestroy()
     {
-        InteractionController.onContinue -= ContinueDescription;
+        InteractionController.OnContinue -= ContinueDescription;
     }
     private void ToggleWindow(bool show)
     {
@@ -50,7 +43,7 @@ public class Description : MonoBehaviour
 
         index = 0;
         ToggleWindow(true);
-        playerMovement.LockMovement();
+        Player.Instance.LockMovement();
 
         ShowCurrentLine();
     }
@@ -89,7 +82,7 @@ public class Description : MonoBehaviour
         else
         {
             ToggleWindow(false);
-            playerMovement?.UnlockMovement();
+            Player.Instance.UnlockMovement();
             onComplete?.Invoke();
             FinishDescription();
         }

@@ -38,7 +38,7 @@ public class CutsceneManager : MonoBehaviour
     {
         dialogue.StartDialogue(defDialogueSO);
 
-        while (dialogue.isDialogueActive) 
+        while (dialogue.IsDialogueActive) 
             yield return null;
     }
     private IEnumerator MoveToSpot() 

@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
     public Dialogue dialogueScript;
     public void PlayDialogue()
     {
-        if (dialogueScript.isDialogueActive) return;
+        if (dialogueScript.IsDialogueActive) return;
 
         switch (npcStatement.currentState)
         {
