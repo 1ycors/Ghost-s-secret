@@ -43,11 +43,11 @@ public class CutsceneManager : MonoBehaviour
     }
     private IEnumerator MoveToSpot() 
     {
-        var playerMovement = player.GetComponent<PlayerMovement>();
+        //var playerMovement = player.GetComponent<PlayerMovement>();
 
-        if (playerMovement != null)
+        if (Player.Instance != null)
         {
-            playerMovement.enabled = false;
+            Player.Instance.enabled = false;
         }
         playerAnim.SetBool("isMoving", true);
 
@@ -67,7 +67,7 @@ public class CutsceneManager : MonoBehaviour
         }
         AnimatorUpdate();
 
-        playerAnim.SetFloat("Horizontal", 1);
+        playerAnim.SetFloat("LastHorizontal", 1);
         playerAnim.SetFloat("Vertical", 0);
 
         yield return new WaitForSeconds(4f);
@@ -75,11 +75,11 @@ public class CutsceneManager : MonoBehaviour
     }
     private IEnumerator MoveToDoor() 
     {
-        var playerMovement = player.GetComponent<PlayerMovement>();
+        //var playerMovement = player.GetComponent<PlayerMovement>();
 
-        if (playerMovement != null)
+        if (Player.Instance != null)
         {
-            playerMovement.enabled = false;
+            Player.Instance.enabled = false;
         }
         playerAnim.SetBool("isMoving", true);
 
