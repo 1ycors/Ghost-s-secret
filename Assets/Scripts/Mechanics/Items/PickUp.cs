@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour, IInteractable
 {
-    public QuestItemSO item;
+    [SerializeField] private QuestItemSO item;
 
     private void Start()
     {
@@ -13,7 +13,7 @@ public class PickUp : MonoBehaviour, IInteractable
     {
         TryAddItem();
     }
-    void TryAddItem()
+    public void TryAddItem()
     {
         if (UIManager.Instance.inventory.AddItem(item))
         {

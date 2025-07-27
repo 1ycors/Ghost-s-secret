@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Description : MonoBehaviour
 {
-    public GameObject window;
-    public TMP_Text descriptionText;
+    [SerializeField] private GameObject window;
+    [SerializeField] private TMP_Text descriptionText;
 
     private DescripSO currentDescrip;
     private Action onComplete;
@@ -14,7 +14,6 @@ public class Description : MonoBehaviour
     private bool isWriting;
 
     private float writingSpeed = 0.01f;
-
     private void Awake()
     {
         window.SetActive(false);

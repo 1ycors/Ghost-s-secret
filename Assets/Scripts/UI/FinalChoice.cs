@@ -7,16 +7,16 @@ using UnityEngine.UI;
 
 public class FinalChoice : MonoBehaviour
 {
-    public GameObject panel;
-    public TextMeshProUGUI messageText;
+    [SerializeField] private GameObject panel;
+    [SerializeField] private TextMeshProUGUI messageText;
     private string questionText = "Кто убийца?";
 
-    public Button fatherButton;
-    public Button motherButton;
-    public Button brotherButton;
-    public Button maidButton;
+    [SerializeField] private Button fatherButton;
+    [SerializeField] private Button motherButton;
+    [SerializeField] private Button brotherButton;
+    [SerializeField] private Button maidButton;
 
-    public CutsceneManager cutsceneManager;
+    [SerializeField] private CutsceneManager cutsceneManager;
 
     private void Awake()
     {
@@ -35,21 +35,16 @@ public class FinalChoice : MonoBehaviour
 
         if (UIManager.Instance.inventory.slots.Any(item => item == null))
         {
-            Debug.Log("пропуск");
+            maidButton.onClick.AddListener(DefaultEnding);
         }
         else if (UIManager.Instance.inventory.slots.Any(slot => slot.itemInstance.itemData.itemID == "maidsDiary"))
         {
             maidButton.onClick.AddListener(TrueEnding);
         }
-        else
-        {
-            maidButton.onClick.AddListener(DefaultEnding);
-        }
     }
     //перед этим нужно будет сделать кортину, чтобы перед выбором вышло сообщение, например, перед тем как завершить квест, вы уверены, что готовы указать на убийцу? Да/Подумать еще
-    public void StartFinalChoice() 
+    public void StartFinalChoice()
     {
-        Debug.Log("СРАБАТЫВАЕНИЕ StartFinalChoice ИЗ ФАЙНАЛ ЧОЙС БЛЯТЬ");
         panel.SetActive(true);
         messageText.text = questionText;
     }
@@ -59,14 +54,12 @@ public class FinalChoice : MonoBehaviour
     }
     private void DefaultEnding() 
     {
-        //запускаем катсцену с неистенной концовкой
         cutsceneManager.StartDefaultCutscene();
         FinishFinalChoice();
         Debug.Log("Открыта не истинная концвока.");
     }
     private void TrueEnding() 
     {
-        //запускаем катсцену с истинной концовкой
         Debug.Log("Истинная концвока открыта!");
         //катсцена
     }

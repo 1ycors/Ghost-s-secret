@@ -58,12 +58,12 @@ public class GameStateManager : Singleton<GameStateManager>
     {
         return PlayerPrefs.GetInt("door_" + doorID, 0) == 1;
     }
-    public void MarkObjectAsInteracted(string objectName, bool isActive) 
+    public void MarkObjectAsInteracted(GameObject objectName, bool isActive) 
     {
         PlayerPrefs.SetInt("object_" + objectName, isActive? 1 : 0);
         PlayerPrefs.Save();
     }
-    public bool IsObjectMarked(string objectName) 
+    public bool IsObjectMarked(GameObject objectName) 
     {
         return PlayerPrefs.GetInt("object_" + objectName, 0) == 1;
     }

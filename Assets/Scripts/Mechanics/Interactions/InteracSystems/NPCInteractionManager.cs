@@ -6,13 +6,13 @@ using static QuestStatement;
 
 public class NPCInteractionManager : MonoBehaviour, IInteractable
 {
-    public QuestStatement questStatement;
-    public NPCStatement npcStatement;
-    public DialogueManager dialogueManager;
-    public QuestSystem questSystem;
-    public QuestSO questSO;
+    [SerializeField] private QuestStatement questStatement;
+    [SerializeField] private NPCStatement npcStatement;
+    [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private QuestSystem questSystem;
+    [SerializeField] private QuestSO questSO;
 
-    public List<QuestSO> quests = new List<QuestSO>();
+    [SerializeField] private List<QuestSO> quests = new List<QuestSO>();
 
     private void Start()
     {
@@ -52,7 +52,6 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
                     Debug.Log($"current questState: {questStatement.currentQuest}");
                     //dialogueManager.PlayDialogue();
                     UIManager.Instance.finalChoice.StartFinalChoice();
-                    Debug.Log("¬€«€¬¿≈Ã StartFinalChoice »« Õœ—»Õ“≈–¿ ÿÕ");
                     return;
                 }
                 dialogueManager.PlayDialogue();

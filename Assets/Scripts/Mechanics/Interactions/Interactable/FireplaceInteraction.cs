@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class FireplaceInteraction : MonoBehaviour, IInteractable
 {
-    public QuestItemSO requiredKey;
-    public DescripSO firstSO;
-    public DescripSO secondSO;
+    [SerializeField] private QuestItemSO requiredKey;
+    [SerializeField] private DescripSO firstSO;
+    [SerializeField] private DescripSO secondSO;
+    [SerializeField] private GameObject currentObject;
 
     private bool isMarked = false;
     private bool isChoiceActive = false;
     private void Start()
     {
-        if (GameStateManager.Instance.IsObjectMarked("Fireplace"))
+        if (GameStateManager.Instance.IsObjectMarked(currentObject))
             isMarked = true;
     }
     public void Interact() 
@@ -23,7 +24,6 @@ public class FireplaceInteraction : MonoBehaviour, IInteractable
             Debug.Log("Попытка взаимодействовать во время активной интеракции");
             return;
         }
-
         if (isMarked) 
         {
             UIManager.Instance.description.StartDescription(secondSO);
@@ -38,7 +38,7 @@ public class FireplaceInteraction : MonoBehaviour, IInteractable
                     {
                         UIManager.Instance.inventory.AddItem(requiredKey);
                         UIManager.Instance.description.ShowMessage("Вы подобрали ключ.");
-                        GameStateManager.Instance.MarkObjectAsInteracted("Fireplace", true);
+                        GameStateManager.Instance.MarkObjectAsInteracted(currentObject, true);
                         isMarked = true;
                     }
                     else

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InteractionController : Singleton<InteractionController>
 {
-    public Trigger trigger;
+    [SerializeField] private Trigger trigger;
     public bool IsInteracting { get; private set; }
     public static event Action OnContinue;
 
@@ -21,21 +21,18 @@ public class InteractionController : Singleton<InteractionController>
             OnContinue?.Invoke();
             return;
         }
-
         if (trigger.currentInteractable != null) 
         {
             trigger.Interact();
-            Debug.Log("Срабатывание Интеракта из контроллера");
         }
     }
     public void StartInteraction() 
     {
         IsInteracting = true;
-        Debug.Log("Срабатывание StartInteraction из контроллера");
+        Debug.Log("IsInteracting = true");
     }
     public void FinishInteraction() 
     {
         IsInteracting = false;
-        Debug.Log("Срабатывание FinishInteraction из контроллера");
     }
 }

@@ -8,7 +8,7 @@ public class PageUI : MonoBehaviour
 {
     [SerializeField] private GameObject window;
     [SerializeField] private TMP_Text pageText;
-    public Button closeButton;
+    [SerializeField] private Button closeButton;
     private void Awake()
     {
         window.SetActive(false);
@@ -16,7 +16,6 @@ public class PageUI : MonoBehaviour
     private void Start()
     {
         closeButton.onClick.RemoveAllListeners();
-
         closeButton.onClick.AddListener(ClosePage);
     }
     public void ShowPage(ReadableQuestItemSO itemSO) 
