@@ -40,7 +40,7 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
                 npcStatement.currentState = NPCState.QuestStart;
                 NPCStateChanged();
                 Debug.Log($"current questState: {questStatement.currentQuest}");
-                UIManager.Instance.questUI.ActivateUI();
+                UIManager.Instance.QuestUI.ActivateUI();
                 break;
             case QuestState.QuestActive:
                 if (questSystem.RequiredItemsSearch())
@@ -51,7 +51,7 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
                     NPCStateChanged();
                     Debug.Log($"current questState: {questStatement.currentQuest}");
                     //dialogueManager.PlayDialogue();
-                    UIManager.Instance.finalChoice.StartFinalChoice();
+                    UIManager.Instance.FinalChoice.StartFinalChoice();
                     return;
                 }
                 dialogueManager.PlayDialogue();

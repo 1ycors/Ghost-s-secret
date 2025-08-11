@@ -26,24 +26,24 @@ public class FireplaceInteraction : MonoBehaviour, IInteractable
         }
         if (isMarked) 
         {
-            UIManager.Instance.description.StartDescription(secondSO);
+            UIManager.Instance.Description.StartDescription(secondSO);
         }
         else
         {
             isChoiceActive = true;
-            UIManager.Instance.description.StartDescription(firstSO, () =>
-                UIManager.Instance.choicePanel.Show("Подобрать?", (bool isYes) =>
+            UIManager.Instance.Description.StartDescription(firstSO, () =>
+                UIManager.Instance.ChoicePanel.Show("Подобрать?", (bool isYes) =>
                 {
                     if (isYes)
                     {
-                        UIManager.Instance.inventory.AddItem(requiredKey);
-                        UIManager.Instance.description.ShowMessage("Вы подобрали ключ.");
+                        UIManager.Instance.Inventory.AddItem(requiredKey);
+                        UIManager.Instance.Description.ShowMessage("Вы подобрали ключ.");
                         GameStateManager.Instance.MarkObjectAsInteracted(currentObject, true);
                         isMarked = true;
                     }
                     else
                     {
-                        UIManager.Instance.description.ShowMessage("Вы решили не трогать предмет.");
+                        UIManager.Instance.Description.ShowMessage("Вы решили не трогать предмет.");
                     }
                     isChoiceActive = false;
                     InteractionController.Instance.FinishInteraction();

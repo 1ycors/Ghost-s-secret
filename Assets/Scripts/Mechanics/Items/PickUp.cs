@@ -15,13 +15,13 @@ public class PickUp : MonoBehaviour, IInteractable
     }
     public void TryAddItem()
     {
-        if (UIManager.Instance.inventory.AddItem(item))
+        if (UIManager.Instance.Inventory.AddItem(item))
         {
             GameStateManager.Instance.MarkItemAsPicked(item.uniqueID); // Сохраняем факт подбора
             gameObject.SetActive(false);
             if (item is ReadableQuestItemSO itemSO)
             {
-                UIManager.Instance.pageUI.ShowPage(itemSO);
+                UIManager.Instance.PageUI.ShowPage(itemSO);
             }
         }
         InteractionController.Instance.FinishInteraction();

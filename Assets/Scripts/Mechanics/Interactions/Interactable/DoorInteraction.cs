@@ -20,7 +20,7 @@ public class DoorInteraction: MonoBehaviour, IInteractable
     private bool SearchKey()
     {
         Debug.Log("Ищем ключ...");
-        var slots = UIManager.Instance.inventory.slots;
+        var slots = UIManager.Instance.Inventory.slots;
         if (slots == null || slots.Length == 0)
         {
             Debug.LogError("Ошибка: слоты инвентаря не найдены!");
@@ -37,7 +37,7 @@ public class DoorInteraction: MonoBehaviour, IInteractable
             if (slot.itemInstance.itemData.itemID == requiredKey.itemID)
             {
                 slot.Clear();
-                UIManager.Instance.inventory.UpdateInventory();
+                UIManager.Instance.Inventory.UpdateInventory();
                 GameStateManager.Instance.SetDoorState("MaidsRoom", true);
                 cldr.enabled = true;
 

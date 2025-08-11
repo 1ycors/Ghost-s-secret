@@ -28,13 +28,13 @@ public class ObjectInteractable : MonoBehaviour, IInteractable
         }
         if (inProccess)
         {
-            UIManager.Instance.description.ContinueDescription();
+            UIManager.Instance.Description.ContinueDescription();
         }
         else
         {
-            UIManager.Instance.description.StartDescription(descripSO, () => TryAddItem());
+            UIManager.Instance.Description.StartDescription(descripSO, () => TryAddItem());
             inProccess = true;
-            UIManager.Instance.inventory.AddItem(page);
+            UIManager.Instance.Inventory.AddItem(page);
             GameStateManager.Instance.MarkObjectAsInteracted(currentObject, true);
         }
         isObjectMarked = true;
@@ -42,12 +42,12 @@ public class ObjectInteractable : MonoBehaviour, IInteractable
     }
     private void TryAddItem() 
     {
-        if (UIManager.Instance.inventory.AddItem(page))
+        if (UIManager.Instance.Inventory.AddItem(page))
         {
             GameStateManager.Instance.MarkItemAsPicked(page.uniqueID); // Сохраняем факт подбора
             if (page is ReadableQuestItemSO itemSO)
             {
-                UIManager.Instance.pageUI.ShowPage(itemSO);
+                UIManager.Instance.PageUI.ShowPage(itemSO);
             }
         }
     }

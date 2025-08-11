@@ -12,7 +12,7 @@ public class QuestSystem : MonoBehaviour
             return false;
         }
 
-        var slots = UIManager.Instance.inventory.slots;
+        var slots = UIManager.Instance.Inventory.slots;
         if (slots == null || slots.Length == 0)
         {
             Debug.LogError("Ошибка: слоты инвентаря не найдены!");

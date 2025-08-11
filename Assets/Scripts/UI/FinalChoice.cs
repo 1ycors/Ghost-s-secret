@@ -33,11 +33,11 @@ public class FinalChoice : MonoBehaviour
         fatherButton.onClick.AddListener(DefaultEnding);
         brotherButton.onClick.AddListener(DefaultEnding);
 
-        if (UIManager.Instance.inventory.slots.Any(item => item == null))
+        if (UIManager.Instance.Inventory.slots.Any(item => item == null))
         {
             maidButton.onClick.AddListener(DefaultEnding);
         }
-        else if (UIManager.Instance.inventory.slots.Any(slot => slot.itemInstance.itemData.itemID == "maidsDiary"))
+        else if (UIManager.Instance.Inventory.slots.Any(slot => slot.itemInstance.itemData.itemID == "maidsDiary"))
         {
             maidButton.onClick.AddListener(TrueEnding);
         }

@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class UIManager : Singleton<UIManager>
 {
-    public Inventory inventory;
-    public Description description;
-    public ChoicePanel choicePanel;
-    public QuestUI questUI;
-    public PageUI pageUI;
-    public FinalChoice finalChoice;
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private Description description;
+    [SerializeField] private ChoicePanel choicePanel;
+    [SerializeField] private QuestUI questUI;
+    [SerializeField] private PageUI pageUI;
+    [SerializeField] private FinalChoice finalChoice;
+
+    public Inventory Inventory => inventory;
+    public Description Description => description;
+    public ChoicePanel ChoicePanel => choicePanel;
+    public QuestUI QuestUI => questUI;
+    public PageUI PageUI => pageUI;
+    public FinalChoice FinalChoice => finalChoice;
 }

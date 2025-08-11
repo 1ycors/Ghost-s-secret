@@ -13,6 +13,6 @@ public class DescripObject : MonoBehaviour, IInteractable
             return;
         }
         Debug.Log("Срабатывание Interact в DescripObject");
-        UIManager.Instance.description.StartDescription(descripSO);
+        UIManager.Instance.Description.StartDescription(descripSO);
     }
 }
