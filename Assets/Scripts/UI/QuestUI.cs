@@ -8,7 +8,7 @@ public class QuestUI : MonoBehaviour
 {
     [SerializeField] private GameObject questTextContainer;
     [SerializeField] private TextMeshProUGUI questText;
-    public QuestSO currentQuest;
+    [SerializeField] private QuestSO currentQuest;
 
     private Dictionary<QuestItemSO, int> currentCounts = new();
     private void Awake()

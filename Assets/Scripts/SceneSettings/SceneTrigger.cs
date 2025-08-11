@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class SceneTrigger : MonoBehaviour
 {
-    public string sceneName;
-    public string spawnPointName;
+    [SerializeField] private string sceneName;
+    [SerializeField] private string spawnPointName;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

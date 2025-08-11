@@ -18,7 +18,6 @@ public class Inventory : MonoBehaviour
         {
             if (slot.itemInstance != null && slot.itemInstance.itemData == null)
             {
-                //Debug.LogWarning($"—лот {slot.name} содержит пустой itemInstance. ”дал€ю.");
                 slot.itemInstance = null;
             }
         }

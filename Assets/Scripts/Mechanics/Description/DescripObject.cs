@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DescripObject : MonoBehaviour, IInteractable
 {
-    public DescripSO descripSO;
+    [SerializeField] private DescripSO descripSO;
     public void Interact() 
     {
         if (InteractionController.Instance.IsInteracting)

@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class ChoicePanel : MonoBehaviour
 {
-    public GameObject panel;
-    public TextMeshProUGUI messageText;
-    public Button yesButton;
-    public Button noButton;
+    [SerializeField] private GameObject panel;
+    [SerializeField] private TextMeshProUGUI messageText;
+    [SerializeField] private Button yesButton;
+    [SerializeField] private Button noButton;
 
     private Action<bool> callback;
     private void Start()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorInteraction: MonoBehaviour, IInteractable
 {
-    public QuestItemSO requiredKey;
+    [SerializeField] private QuestItemSO requiredKey;
     private BoxCollider2D cldr;
     private void Start()
     {

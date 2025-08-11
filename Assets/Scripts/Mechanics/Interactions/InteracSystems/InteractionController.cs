@@ -34,5 +34,6 @@ public class InteractionController : Singleton<InteractionController>
     public void FinishInteraction() 
     {
         IsInteracting = false;
+        Debug.Log("IsInteracting = false");
     }
 }

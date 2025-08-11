@@ -5,8 +5,8 @@ using static NPCStatement;
 
 public class DialogueManager : MonoBehaviour
 {
-    public NPCStatement npcStatement;
-    public Dialogue dialogueScript;
+    [SerializeField] private NPCStatement npcStatement;
+    [SerializeField] private Dialogue dialogueScript;
     public void PlayDialogue()
     {
         if (dialogueScript.IsDialogueActive) return;

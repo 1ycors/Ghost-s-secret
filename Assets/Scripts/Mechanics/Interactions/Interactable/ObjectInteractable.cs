@@ -21,14 +21,14 @@ public class ObjectInteractable : MonoBehaviour, IInteractable
     }
     public void Interact() 
     {
-        if (inProccess)
-        {
-            UIManager.Instance.description.ContinueDescription();
-        }
         if (isObjectMarked)
         {
             Debug.Log("Предмет уже подобран");
             return;
+        }
+        if (inProccess)
+        {
+            UIManager.Instance.description.ContinueDescription();
         }
         else
         {
@@ -36,9 +36,9 @@ public class ObjectInteractable : MonoBehaviour, IInteractable
             inProccess = true;
             UIManager.Instance.inventory.AddItem(page);
             GameStateManager.Instance.MarkObjectAsInteracted(currentObject, true);
-            isObjectMarked = true;
         }
-        InteractionController.Instance.FinishInteraction();
+        isObjectMarked = true;
+        inProccess = false;
     }
     private void TryAddItem() 
     {

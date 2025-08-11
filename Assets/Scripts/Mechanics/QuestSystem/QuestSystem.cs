@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class QuestSystem : MonoBehaviour
 {
-    public QuestSO currentQuest;
-    public QuestItemSO itemSO;
+    [SerializeField] private QuestSO currentQuest;
+    [SerializeField] private QuestItemSO itemSO;
     public bool RequiredItemsSearch()
     {
         if (currentQuest == null)
