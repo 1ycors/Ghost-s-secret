@@ -9,11 +9,13 @@ public class QuestUI : MonoBehaviour
     [SerializeField] private GameObject questTextContainer;
     [SerializeField] private TextMeshProUGUI questText;
     [SerializeField] private QuestSO currentQuest;
+    [SerializeField] private GameObject frameImage;
 
     private Dictionary<QuestItemSO, int> currentCounts = new();
     private void Awake()
     {
         questTextContainer.SetActive(false);
+        frameImage.SetActive(false);
     }
     private void Start()
     {
@@ -21,6 +23,7 @@ public class QuestUI : MonoBehaviour
     }
     public void ActivateUI() 
     {
+        frameImage.SetActive(true);
         questTextContainer.SetActive(true);
         ShowRequiredItems();
         UpdateUI();
@@ -28,6 +31,7 @@ public class QuestUI : MonoBehaviour
     public void HideUI() 
     {
         questTextContainer.SetActive(false);
+        frameImage.SetActive(false);
     }
     private void OnDestroy()
     {

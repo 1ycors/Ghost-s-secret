@@ -29,7 +29,7 @@ public class FireplaceInteraction : MonoBehaviour, IInteractable
             UIManager.Instance.Description.StartDescription(secondSO);
         }
         else
-        {
+        { //скорее всего вот тут проблема. что если поставить условие else if (!isMarked) ?
             isChoiceActive = true;
             UIManager.Instance.Description.StartDescription(firstSO, () =>
                 UIManager.Instance.ChoicePanel.Show("Подобрать?", (bool isYes) =>
