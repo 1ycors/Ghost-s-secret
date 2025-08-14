@@ -6,23 +6,8 @@ using static NPCStatement;
 
 public class GameStateManager : Singleton<GameStateManager>
 {
-    //информация о количестве страниц дневников
-
     private Dictionary<string, QuestState> questStates = new();
     private NPCState npcState;
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetProgress();
-            Debug.Log("Прогресс сброшен!");
-        }
-    }
-    public void ResetProgress()
-    {
-        PlayerPrefs.DeleteAll();
-    }
     public void RegisterQuestState(string id, QuestState state) 
     {
         questStates[id] = state;

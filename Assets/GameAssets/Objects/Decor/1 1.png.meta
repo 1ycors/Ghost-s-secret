@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2b4774de3bc0bf64893dd25909040dc7
+guid: 4b04a9f8b297c4f4ca19a8a8fe835459
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -84,7 +84,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 24
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Egg_item_0
+      name: 1 1_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 14
-        height: 14
+        x: 0
+        y: 0
+        width: 28
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95b4ee6ec4a686c41a22ff66b0810dda
-      internalID: -239788145
+      spriteID: 33813632fd3f64148b74cae203b5f674
+      internalID: 1568621408
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Egg_item_0: -239788145
+      1 1_0: 1568621408
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
