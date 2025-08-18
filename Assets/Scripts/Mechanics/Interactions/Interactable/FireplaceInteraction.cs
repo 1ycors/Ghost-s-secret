@@ -50,5 +50,6 @@ public class FireplaceInteraction : MonoBehaviour, IInteractable
                 })
             );
         }
+        //InteractionController.Instance.FinishInteraction();
     }
 }

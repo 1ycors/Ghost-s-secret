@@ -1806,8 +1806,8 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0332681
-    width: 1.2731277
+    y: 0.14677104
+    width: 0.99999994
     height: 0.704501
   near clip plane: 0.3
   far clip plane: 1000
@@ -2542,7 +2542,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -1393314505, guid: c45d94ab0a56df3409dcb86453735e22, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10533,7 +10533,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -985762327, guid: c45d94ab0a56df3409dcb86453735e22, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8396226, g: 0.82774115, b: 0.82774115, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
