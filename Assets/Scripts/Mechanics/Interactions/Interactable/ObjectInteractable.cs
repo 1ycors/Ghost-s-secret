@@ -16,8 +16,6 @@ public class ObjectInteractable : MonoBehaviour, IInteractable
     {
         if (GameStateManager.Instance.IsObjectMarked(currentObject))
             isObjectMarked = true;
-        if (GameStateManager.Instance.IsItemPicked(page.uniqueID)) // Проверяем, был ли предмет уже подобран ранее
-            gameObject.SetActive(false);
     }
     public void Interact() 
     {
@@ -28,20 +26,26 @@ public class ObjectInteractable : MonoBehaviour, IInteractable
         }
         if (inProccess)
         {
+            Debug.Log("Срабатывание блока if(inProccess) из ObjectInteractable");
             UIManager.Instance.Description.ContinueDescription();
         }
         else
         {
-            UIManager.Instance.Description.StartDescription(descripSO, () => TryAddItem());
+            Debug.Log("Срабатывание блока else");
             inProccess = true;
-            UIManager.Instance.Inventory.AddItem(page);
+            UIManager.Instance.Description.StartDescription(descripSO, () =>
+            {
+                TryAddThisItem();
+                Debug.Log("Срабатывание Action из ObjectInteractable");
+                inProccess = false;
+            });
             GameStateManager.Instance.MarkObjectAsInteracted(currentObject, true);
         }
         isObjectMarked = true;
-        inProccess = false;
     }
-    private void TryAddItem() 
+    private void TryAddThisItem() 
     {
+        Debug.Log("Срабатывание TryAddItem из ObjectInteractable");
         if (UIManager.Instance.Inventory.AddItem(page))
         {
             GameStateManager.Instance.MarkItemAsPicked(page.uniqueID); // Сохраняем факт подбора

@@ -6,9 +6,11 @@ using UnityEngine;
 public class FireplaceInteraction : MonoBehaviour, IInteractable
 {
     [SerializeField] private QuestItemSO requiredKey;
+    [SerializeField] private GameObject currentObject;
     [SerializeField] private DescripSO firstSO;
     [SerializeField] private DescripSO secondSO;
-    [SerializeField] private GameObject currentObject;
+    [SerializeField] private DescripSO ifYes;
+    [SerializeField] private DescripSO ifNo;
 
     private bool isMarked = false;
     private bool isChoiceActive = false;
@@ -30,26 +32,24 @@ public class FireplaceInteraction : MonoBehaviour, IInteractable
         }
         else
         { //скорее всего вот тут проблема. что если поставить условие else if (!isMarked) ?
-            isChoiceActive = true;
             UIManager.Instance.Description.StartDescription(firstSO, () =>
+            { isChoiceActive = true;
                 UIManager.Instance.ChoicePanel.Show("Подобрать?", (bool isYes) =>
-                {
-                    if (isYes)
                     {
-                        UIManager.Instance.Inventory.AddItem(requiredKey);
-                        UIManager.Instance.Description.ShowMessage("Вы подобрали ключ.");
-                        GameStateManager.Instance.MarkObjectAsInteracted(currentObject, true);
-                        isMarked = true;
-                    }
-                    else
-                    {
-                        UIManager.Instance.Description.ShowMessage("Вы решили не трогать предмет.");
-                    }
-                    isChoiceActive = false;
-                    InteractionController.Instance.FinishInteraction();
-                })
-            );
+                        if (isYes)
+                        {
+                            UIManager.Instance.Inventory.AddItem(requiredKey);
+                            UIManager.Instance.Description.StartDescription(ifYes);
+                            GameStateManager.Instance.MarkObjectAsInteracted(currentObject, true);
+                            isMarked = true;
+                        }
+                        else
+                        {
+                            UIManager.Instance.Description.StartDescription(ifNo);
+                        }
+                        isChoiceActive = false;
+                    });
+            });
         }
-        //InteractionController.Instance.FinishInteraction();
     }
 }

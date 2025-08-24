@@ -16,7 +16,7 @@ public class InteractionController : Singleton<InteractionController>
     }
     public void HandleInteraction()
     {
-        if (IsInteracting) 
+        if (IsInteracting)
         {
             OnContinue?.Invoke();
             return;

@@ -13,8 +13,9 @@ public class PickUp : MonoBehaviour, IInteractable
     {
         TryAddItem();
     }
-    public void TryAddItem()
+    private void TryAddItem()
     {
+        Debug.Log("Срабатывание TryAddItem из PickUp");
         if (UIManager.Instance.Inventory.AddItem(item))
         {
             GameStateManager.Instance.MarkItemAsPicked(item.uniqueID); // Сохраняем факт подбора

@@ -18,11 +18,11 @@ public class Description : MonoBehaviour
     {
         window.SetActive(false);
     }
-    private void Start()
+    private void OnEnable()
     {
         InteractionController.OnContinue += ContinueDescription;
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
         InteractionController.OnContinue -= ContinueDescription;
     }
@@ -63,12 +63,9 @@ public class Description : MonoBehaviour
         }
         isWriting = false;
     }
-    public void ShowMessage(string message) 
-    {
-        Debug.Log(message);
-    }
     public void ContinueDescription()
     {
+        Debug.Log("Срабатывание ContinueDescription из description");
         if (currentDescrip == null) return;
 
         if (isWriting) return;
@@ -80,16 +77,20 @@ public class Description : MonoBehaviour
         }
         else
         {
+            Debug.Log("Срабатывание блока else в description");
             ToggleWindow(false);
-            Player.Instance.UnlockMovement();
+
             onComplete?.Invoke();
             FinishDescription();
         }
     }
     public void FinishDescription() 
     {
+        Debug.Log("Срабатывание блока FinishDescription в description");
         index = 0;
         isWriting = false;
+        onComplete = null;
+        Player.Instance.UnlockMovement();
         InteractionController.Instance.FinishInteraction();
     }
 }
