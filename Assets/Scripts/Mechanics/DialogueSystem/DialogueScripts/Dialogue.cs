@@ -21,14 +21,14 @@ public class Dialogue : MonoBehaviour
     }
     private void Start()
     {
-        InteractionController.OnContinue += TryAdvanceDialogue;
+        InteractionController.OnContinueDialogue += TryAdvanceDialogue;
     }
     private void OnDestroy()
     {
-        InteractionController.OnContinue -= TryAdvanceDialogue;
+        InteractionController.OnContinueDialogue -= TryAdvanceDialogue;
     }
-    private void OnEnable() => InputCustom.OnEPressed += TryAdvanceDialogue;
-    private void OnDisable() => InputCustom.OnEPressed -= TryAdvanceDialogue;
+    //private void OnEnable() => InputCustom.OnEPressed += TryAdvanceDialogue;
+    //private void OnDisable() => InputCustom.OnEPressed -= TryAdvanceDialogue;
 
     void TryAdvanceDialogue() 
     {

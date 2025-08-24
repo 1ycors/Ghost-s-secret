@@ -4,8 +4,10 @@ using UnityEngine;
 public class InteractionController : Singleton<InteractionController>
 {
     [SerializeField] private Trigger trigger;
+    [SerializeField] private Dialogue dialogue;
     public bool IsInteracting { get; private set; }
-    public static event Action OnContinue;
+    public static event Action OnContinueDescription;
+    public static event Action OnContinueDialogue;
 
     private void OnEnable() => InputCustom.OnEPressed += HandleInteraction;
     private void OnDisable() => InputCustom.OnEPressed -= HandleInteraction;
@@ -18,8 +20,22 @@ public class InteractionController : Singleton<InteractionController>
     {
         if (IsInteracting)
         {
-            OnContinue?.Invoke();
-            return;
+            if (dialogue == null)
+                dialogue = FindAnyObjectByType<Dialogue>(FindObjectsInactive.Include);
+
+            if (dialogue != null && dialogue.IsDialogueActive)
+            {
+                Debug.Log("Âûחûגאועסÿ OnContinueDialogue");
+                OnContinueDialogue?.Invoke();
+                return;
+            }
+            else
+            {
+                Debug.Log("Âûחûגאועסÿ OnContinueDescription");
+                OnContinueDescription?.Invoke();
+                return;
+            }
+            
         }
         if (trigger.currentInteractable != null) 
         {

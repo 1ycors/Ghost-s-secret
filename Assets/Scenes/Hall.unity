@@ -507,6 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 493802794}
+  dialogue: {fileID: 1960339205}
 --- !u!1 &213050365
 GameObject:
   m_ObjectHideFlags: 0

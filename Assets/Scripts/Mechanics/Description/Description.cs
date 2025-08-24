@@ -20,11 +20,11 @@ public class Description : MonoBehaviour
     }
     private void OnEnable()
     {
-        InteractionController.OnContinue += ContinueDescription;
+        InteractionController.OnContinueDescription += ContinueDescription;
     }
     private void OnDisable()
     {
-        InteractionController.OnContinue -= ContinueDescription;
+        InteractionController.OnContinueDescription -= ContinueDescription;
     }
     private void ToggleWindow(bool show)
     {
@@ -65,6 +65,8 @@ public class Description : MonoBehaviour
     }
     public void ContinueDescription()
     {
+        if (!window.activeSelf) return;
+
         Debug.Log("Срабатывание ContinueDescription из description");
         if (currentDescrip == null) return;
 
@@ -90,6 +92,7 @@ public class Description : MonoBehaviour
         index = 0;
         isWriting = false;
         onComplete = null;
+        currentDescrip = null;
         Player.Instance.UnlockMovement();
         InteractionController.Instance.FinishInteraction();
     }
