@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
     [SerializeField] private QuestSO questSO;
 
     [SerializeField] private List<QuestSO> quests = new List<QuestSO>();
+
+    public static event Action OnQuestEnable;
 
     private void Start()
     {
@@ -39,6 +42,7 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
                 QuestStateChanged();
                 npcStatement.currentState = NPCState.QuestStart;
                 NPCStateChanged();
+                OnQuestEnable.Invoke();
                 Debug.Log($"current questState: {questStatement.currentQuest}");
                 UIManager.Instance.QuestUI.ActivateUI();
                 break;
@@ -57,18 +61,18 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
                 dialogueManager.PlayDialogue();
                 Debug.Log($"current questState: {questStatement.currentQuest}");
                 break;
-            case QuestState.QuestComplete:
-                questStatement.currentQuest = QuestState.AllQuestsDone;
-                QuestStateChanged();
-                npcStatement.currentState = NPCState.DefaultState;
-                NPCStateChanged();
-                //dialogueManager.PlayDialogue();
-                Debug.Log($"current questState: {questStatement.currentQuest}");
-                break;
-            case QuestState.AllQuestsDone:
-                Debug.Log("Все квесты завершены — обычный диалог.");
-                dialogueManager.PlayDialogue();
-                break;
+            //case QuestState.QuestComplete:
+            //    questStatement.currentQuest = QuestState.AllQuestsDone;
+            //    QuestStateChanged();
+            //    npcStatement.currentState = NPCState.DefaultState;
+            //    NPCStateChanged();
+            //    //dialogueManager.PlayDialogue();
+            //    Debug.Log($"current questState: {questStatement.currentQuest}");
+            //    break;
+            //case QuestState.AllQuestsDone:
+            //    Debug.Log("Все квесты завершены — обычный диалог.");
+            //    dialogueManager.PlayDialogue();
+            //    break;
         }
     }
 }
