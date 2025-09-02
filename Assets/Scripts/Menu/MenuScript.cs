@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,8 +16,10 @@ public class MenuScript : MonoBehaviour
     }
     private void StartTheGame() 
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(1);
         PlayerPrefs.DeleteAll();
+        if (Player.Instance != null)
+            Destroy(Player.Instance.gameObject);
     }
     private void EndTheGame() 
     {

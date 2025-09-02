@@ -1209,6 +1209,7 @@ GameObject:
   - component: {fileID: 246593198}
   - component: {fileID: 246593200}
   - component: {fileID: 246593199}
+  - component: {fileID: 246593201}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -1328,6 +1329,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &246593201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246593197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &278605005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1437,7 @@ GameObject:
   - component: {fileID: 300173322}
   - component: {fileID: 300173324}
   - component: {fileID: 300173323}
+  - component: {fileID: 300173325}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -1542,6 +1557,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &300173325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300173321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &332555915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1581,7 @@ GameObject:
   - component: {fileID: 332555916}
   - component: {fileID: 332555918}
   - component: {fileID: 332555917}
+  - component: {fileID: 332555919}
   m_Layer: 0
   m_Name: Globe
   m_TagString: Untagged
@@ -1662,6 +1691,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &332555919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332555915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 3e8fd863c4e18a14493b7c93ecec1c7f, type: 2}
 --- !u!1 &338302233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +1883,7 @@ GameObject:
   - component: {fileID: 346262948}
   - component: {fileID: 346262950}
   - component: {fileID: 346262949}
+  - component: {fileID: 346262951}
   m_Layer: 0
   m_Name: Sofa
   m_TagString: Untagged
@@ -1960,6 +2003,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &346262951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346262947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 03a1879d73d720c45adc2ab3cee7e343, type: 2}
 --- !u!1 &385389920
 GameObject:
   m_ObjectHideFlags: 0
@@ -9876,6 +9932,7 @@ GameObject:
   - component: {fileID: 391930631}
   - component: {fileID: 391930633}
   - component: {fileID: 391930632}
+  - component: {fileID: 391930634}
   m_Layer: 0
   m_Name: ArmorStand
   m_TagString: Untagged
@@ -9995,6 +10052,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &391930634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391930630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: bf2b3d586a4bcd34c97b792308012a4b, type: 2}
 --- !u!1 &405546586
 GameObject:
   m_ObjectHideFlags: 0
@@ -12070,6 +12140,7 @@ GameObject:
   - component: {fileID: 1228727702}
   - component: {fileID: 1228727704}
   - component: {fileID: 1228727703}
+  - component: {fileID: 1228727705}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -12189,6 +12260,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1228727705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228727701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: f2cb33a45f8779e458ffb7cbbfe26829, type: 2}
 --- !u!1 &1256438449
 GameObject:
   m_ObjectHideFlags: 0
@@ -12818,6 +12902,7 @@ GameObject:
   - component: {fileID: 1418757726}
   - component: {fileID: 1418757728}
   - component: {fileID: 1418757727}
+  - component: {fileID: 1418757729}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -12937,6 +13022,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1418757729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418757725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &1428147330
 GameObject:
   m_ObjectHideFlags: 0
@@ -13032,6 +13130,7 @@ GameObject:
   - component: {fileID: 1457859928}
   - component: {fileID: 1457859930}
   - component: {fileID: 1457859929}
+  - component: {fileID: 1457859931}
   m_Layer: 0
   m_Name: Armchair
   m_TagString: Untagged
@@ -13151,6 +13250,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1457859931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457859927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: d96762cfc9310ed46b974ce042153b8a, type: 2}
 --- !u!1 &1537785252
 GameObject:
   m_ObjectHideFlags: 0
@@ -13246,6 +13358,7 @@ GameObject:
   - component: {fileID: 1549190882}
   - component: {fileID: 1549190884}
   - component: {fileID: 1549190883}
+  - component: {fileID: 1549190885}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -13365,6 +13478,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1549190885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549190881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &1553660708
 GameObject:
   m_ObjectHideFlags: 0
@@ -13552,6 +13678,7 @@ GameObject:
   - component: {fileID: 1569070754}
   - component: {fileID: 1569070756}
   - component: {fileID: 1569070755}
+  - component: {fileID: 1569070757}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -13671,6 +13798,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1569070757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569070753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &1572165590
 GameObject:
   m_ObjectHideFlags: 0
@@ -15198,6 +15338,7 @@ GameObject:
   - component: {fileID: 2046992431}
   - component: {fileID: 2046992433}
   - component: {fileID: 2046992432}
+  - component: {fileID: 2046992434}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -15317,6 +15458,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2046992434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046992430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &2085202869
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
     [SerializeField] private List<QuestSO> quests = new List<QuestSO>();
 
     public static event Action OnQuestEnable;
+    public static event Action OnQuestComplete;
 
     private void Start()
     {
@@ -54,25 +55,12 @@ public class NPCInteractionManager : MonoBehaviour, IInteractable
                     npcStatement.currentState = NPCState.QuestComplete; 
                     NPCStateChanged();
                     Debug.Log($"current questState: {questStatement.currentQuest}");
-                    //dialogueManager.PlayDialogue();
-                    UIManager.Instance.FinalChoice.StartFinalChoice();
+                    OnQuestComplete.Invoke();
                     return;
                 }
                 dialogueManager.PlayDialogue();
                 Debug.Log($"current questState: {questStatement.currentQuest}");
                 break;
-            //case QuestState.QuestComplete:
-            //    questStatement.currentQuest = QuestState.AllQuestsDone;
-            //    QuestStateChanged();
-            //    npcStatement.currentState = NPCState.DefaultState;
-            //    NPCStateChanged();
-            //    //dialogueManager.PlayDialogue();
-            //    Debug.Log($"current questState: {questStatement.currentQuest}");
-            //    break;
-            //case QuestState.AllQuestsDone:
-            //    Debug.Log("Все квесты завершены — обычный диалог.");
-            //    dialogueManager.PlayDialogue();
-            //    break;
         }
     }
 }

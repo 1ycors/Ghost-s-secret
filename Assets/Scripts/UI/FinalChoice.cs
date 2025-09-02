@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -33,16 +31,24 @@ public class FinalChoice : MonoBehaviour
         fatherButton.onClick.AddListener(DefaultEnding);
         brotherButton.onClick.AddListener(DefaultEnding);
 
-        if (UIManager.Instance.Inventory.slots.Any(item => item == null))
-        {
-            maidButton.onClick.AddListener(DefaultEnding);
-        }
-        else if (UIManager.Instance.Inventory.slots.Any(slot => slot.itemInstance.itemData.itemID == "maidsDiary"))
-        {
+        var slots = UIManager.Instance.Inventory?.slots;
+
+        if (slots == null)
+            return;
+
+        if (slots.Any(slot => slot?.itemInstance.itemData?.itemID == "MaidsDiary"))
             maidButton.onClick.AddListener(TrueEnding);
-        }
+        else
+            maidButton.onClick.AddListener(DefaultEnding);
     }
-    //перед этим нужно будет сделать кортину, чтобы перед выбором вышло сообщение, например, перед тем как завершить квест, вы уверены, что готовы указать на убийцу? Да/Подумать еще
+    private void OnEnable()
+    {
+        NPCInteractionManager.OnQuestComplete += StartFinalChoice;
+    }
+    private void OnDisable()
+    {
+        NPCInteractionManager.OnQuestComplete -= StartFinalChoice;
+    }
     public void StartFinalChoice()
     {
         panel.SetActive(true);
@@ -60,7 +66,8 @@ public class FinalChoice : MonoBehaviour
     }
     private void TrueEnding() 
     {
+        cutsceneManager.StartTrueCutscene();
+        FinishFinalChoice();
         Debug.Log("Истинная концвока открыта!");
-        //катсцена
     }
 }

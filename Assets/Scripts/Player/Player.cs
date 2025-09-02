@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Player : Singleton <Player>
 {
+    private float h = 0f;
+    private float v = 0f;
+
     [SerializeField] private float runningSpeed = 10f;
     private int lockCount = 0;
     public bool IsLocked => lockCount > 0;
@@ -23,10 +26,17 @@ public class Player : Singleton <Player>
     }
     private void Update()
     {
-        float v = Input.GetAxisRaw("Vertical");
-        float h = Input.GetAxisRaw("Horizontal");
+        if (!IsLocked)
+        {
+            v = Input.GetAxisRaw("Vertical");
+            h = Input.GetAxisRaw("Horizontal");
 
-        Movement(h, v);
+            Movement(h, v);
+        }
+        else
+        {
+            movement = Vector2.zero;
+        }
         RunAnimationCheck(h, v);
     }
     private void FixedUpdate()
@@ -49,6 +59,11 @@ public class Player : Singleton <Player>
     }
     void RunAnimationCheck(float h, float v)
     {
+        if (IsLocked)
+        {
+            anim.SetBool("isMoving", false);
+            return;
+        }
         bool isMoving = h != 0 || v != 0;
 
         anim.SetFloat("Horizontal", h);

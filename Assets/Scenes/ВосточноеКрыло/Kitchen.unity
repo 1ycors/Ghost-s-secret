@@ -4431,6 +4431,7 @@ GameObject:
   - component: {fileID: 1071328553}
   - component: {fileID: 1071328555}
   - component: {fileID: 1071328556}
+  - component: {fileID: 1071328557}
   m_Layer: 0
   m_Name: Barrels
   m_TagString: Untagged
@@ -4540,6 +4541,19 @@ CircleCollider2D:
   m_Offset: {x: 0.00000011920929, y: 0}
   serializedVersion: 2
   m_Radius: 0.7500001
+--- !u!114 &1071328557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071328552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: b2453578efc07464eb2401bd7fa9543c, type: 2}
 --- !u!1 &1103831915
 GameObject:
   m_ObjectHideFlags: 0
@@ -5580,6 +5594,7 @@ GameObject:
   - component: {fileID: 1774649982}
   - component: {fileID: 1774649984}
   - component: {fileID: 1774649983}
+  - component: {fileID: 1774649985}
   m_Layer: 0
   m_Name: Barrels
   m_TagString: Untagged
@@ -5689,6 +5704,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1774649985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774649981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: b2453578efc07464eb2401bd7fa9543c, type: 2}
 --- !u!1 &1803951766
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,6 +5767,7 @@ GameObject:
   - component: {fileID: 1860151992}
   - component: {fileID: 1860151994}
   - component: {fileID: 1860151993}
+  - component: {fileID: 1860151995}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -5848,6 +5877,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1860151995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860151991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: b2453578efc07464eb2401bd7fa9543c, type: 2}
 --- !u!1 &1991862239
 GameObject:
   m_ObjectHideFlags: 0

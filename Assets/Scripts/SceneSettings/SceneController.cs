@@ -6,12 +6,26 @@ using UnityEngine.SceneManagement;
 public class SceneController : Singleton<SceneController>
 {
     private string targetSpawnPointName;
+
     public void LoadNewScene(string sceneName, string spawnPointName)
     {
-        targetSpawnPointName = spawnPointName;
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.LoadScene(sceneName); //загружаем сцену
+        StartCoroutine(LoadNewSceneRoutine(sceneName, spawnPointName));
     }
+
+    private IEnumerator LoadNewSceneRoutine(string sceneName, string spawnPointName)
+    {
+        targetSpawnPointName = spawnPointName;
+        Player.Instance.LockMovement();
+
+        yield return UIManager.Instance.ScreenFader.FadeOut();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.LoadScene(sceneName);
+        yield return null;
+        yield return UIManager.Instance.ScreenFader.FadeIn();
+
+        Player.Instance.UnlockMovement();
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         var spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");

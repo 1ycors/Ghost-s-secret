@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Page1
-  m_EditorClassIdentifier: Assembly-CSharp::QuestItemSO/ReadableQuestItemSO
-  itemName: 
-  itemIcon: {fileID: 0}
-  itemID: 
-  readableText: 
+  m_Script: {fileID: 11500000, guid: 272dc55ab20413c4498c0b3e622ff119, type: 3}
+  m_Name: BrsWardrobe
+  m_EditorClassIdentifier: 
+  descripLines:
+  - "\u0421\u0442\u0430\u0440\u044B\u0439 \u043F\u044B\u043B\u044C\u043D\u044B\u0439
+    \u0448\u043A\u0430\u0444."

@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 138707882}
   - component: {fileID: 138707884}
   - component: {fileID: 138707883}
+  - component: {fileID: 138707885}
   m_Layer: 0
   m_Name: Barrels
   m_TagString: Untagged
@@ -360,6 +361,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &138707885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138707881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: b2453578efc07464eb2401bd7fa9543c, type: 2}
 --- !u!1 &280029399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,6 +2659,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.745283
       objectReference: {fileID: 0}
+    - target: {fileID: 2492620796606979636, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 96a9abad5b36fb14995ae3153f47fcab, type: 2}
     - target: {fileID: 5705179929218937159, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.11
@@ -2803,6 +2821,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.754717
       objectReference: {fileID: 0}
+    - target: {fileID: 2492620796606979636, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 58774afaa22148344bcd54c3f06220f4, type: 2}
     - target: {fileID: 5705179929218937159, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.49
@@ -2879,7 +2901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989951330844269945, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2492620796606979636, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
       propertyPath: item
@@ -3104,6 +3126,7 @@ GameObject:
   - component: {fileID: 1344685441}
   - component: {fileID: 1344685443}
   - component: {fileID: 1344685442}
+  - component: {fileID: 1344685444}
   m_Layer: 0
   m_Name: Barrels
   m_TagString: Untagged
@@ -3213,6 +3236,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1344685444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344685440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: b2453578efc07464eb2401bd7fa9543c, type: 2}
 --- !u!1001 &1351425554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3302,6 +3338,7 @@ GameObject:
   - component: {fileID: 1370230058}
   - component: {fileID: 1370230060}
   - component: {fileID: 1370230059}
+  - component: {fileID: 1370230061}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -3421,6 +3458,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1370230061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370230057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: b9dd001858bd732468f24cec5cfbbd87, type: 2}
 --- !u!1 &1377234389
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,6 +3807,7 @@ GameObject:
   - component: {fileID: 1656482837}
   - component: {fileID: 1656482838}
   - component: {fileID: 1656482839}
+  - component: {fileID: 1656482840}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -3876,6 +3927,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1367285, y: 2.4564905}
   m_EdgeRadius: 0
+--- !u!114 &1656482840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656482836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: d919933d7a31ea84a8f2af630c38ac60, type: 2}
 --- !u!1 &1738743973
 GameObject:
   m_ObjectHideFlags: 0
@@ -4238,6 +4302,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.735849
       objectReference: {fileID: 0}
+    - target: {fileID: 2492620796606979636, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: b8fe7376f4ab20c48ba9c747dd26fa02, type: 2}
     - target: {fileID: 5705179929218937159, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.12

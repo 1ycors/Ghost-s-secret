@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 132260874}
   - component: {fileID: 132260876}
   - component: {fileID: 132260875}
+  - component: {fileID: 132260877}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -271,7 +272,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.016742468, y: -0.012946606}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -282,7 +283,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 2}
+  m_Size: {x: 3.6274724, y: 4.8223267}
   m_EdgeRadius: 0
 --- !u!212 &132260876
 SpriteRenderer:
@@ -336,6 +337,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &132260877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132260873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 41d74648c0f394a478fee5bd97db6b43, type: 2}
 --- !u!1 &158198123
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +545,7 @@ GameObject:
   - component: {fileID: 233041554}
   - component: {fileID: 233041556}
   - component: {fileID: 233041555}
+  - component: {fileID: 233041557}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -650,6 +665,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &233041557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233041553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 8fd521af9717e4b42a99ac34e2bae43d, type: 2}
 --- !u!1 &243010907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,6 +1126,8 @@ GameObject:
   m_Component:
   - component: {fileID: 709046866}
   - component: {fileID: 709046867}
+  - component: {fileID: 709046869}
+  - component: {fileID: 709046868}
   m_Layer: 0
   m_Name: Picture
   m_TagString: Untagged
@@ -1172,6 +1202,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &709046868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709046865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: c9637622b2be53843aa903571875c79b, type: 2}
+--- !u!58 &709046869
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709046865}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.055664413, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.4231297
 --- !u!1 &851253472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,6 +1872,7 @@ GameObject:
   - component: {fileID: 1065330648}
   - component: {fileID: 1065330650}
   - component: {fileID: 1065330649}
+  - component: {fileID: 1065330651}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -1913,6 +1992,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1065330651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065330647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &1068236965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,6 +2787,7 @@ GameObject:
   - component: {fileID: 1531207063}
   - component: {fileID: 1531207065}
   - component: {fileID: 1531207064}
+  - component: {fileID: 1531207067}
   - component: {fileID: 1531207066}
   m_Layer: 0
   m_Name: Glob
@@ -2820,6 +2913,41 @@ MonoBehaviour:
   page: {fileID: 11400000, guid: 0be7a30f45899204e964397b76a47e09, type: 2}
   descripSO: {fileID: 11400000, guid: 798118f8c69018545966efc1ebf53393, type: 2}
   currentObject: {fileID: 1531207062}
+--- !u!58 &1531207067
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531207062}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17548203, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.8944209
 --- !u!1 &1577602271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,6 +3160,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1819176550}
   - component: {fileID: 1819176551}
+  - component: {fileID: 1819176553}
+  - component: {fileID: 1819176552}
   m_Layer: 0
   m_Name: Picture
   m_TagString: Untagged
@@ -3106,6 +3236,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1819176552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819176549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 29f89eed07bac8d45b21ed02c0a48a08, type: 2}
+--- !u!58 &1819176553
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819176549}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.032939512}
+  serializedVersion: 2
+  m_Radius: 1.4134321
 --- !u!1001 &1825557958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3129,6 +3307,14 @@ PrefabInstance:
     - target: {fileID: 989951330844269945, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171460450524251254, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
+      propertyPath: m_Radius
+      value: 1.3762622
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171460450524251254, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.36499548
       objectReference: {fileID: 0}
     - target: {fileID: 2492620796606979636, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
       propertyPath: item

@@ -19,11 +19,11 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 16729d010760121409d81f1fb06c4eb3, type: 2}
     itemID: FathersDiaty
     requiredStackSize: 2
-    isOptional: 0
+    isOptional: 1
   - item: {fileID: 11400000, guid: 8855baf30316e3140804f077f65c0ba9, type: 2}
     itemID: MothersDiary
     requiredStackSize: 3
-    isOptional: 0
+    isOptional: 1
   - item: {fileID: 11400000, guid: db30f7315ab46d64c9c69c583c038805, type: 2}
     itemID: BrothersDiary
     requiredStackSize: 2
@@ -31,7 +31,7 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 66057a7489a872a43b0cafa3d4f863f6, type: 2}
     itemID: GhostsDiary
     requiredStackSize: 2
-    isOptional: 0
+    isOptional: 1
   - item: {fileID: 11400000, guid: b8fe7376f4ab20c48ba9c747dd26fa02, type: 2}
     itemID: MaidsDiary
     requiredStackSize: 6

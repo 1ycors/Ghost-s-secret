@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272dc55ab20413c4498c0b3e622ff119, type: 3}
-  m_Name: Flowers
+  m_Name: FlowersPicture
   m_EditorClassIdentifier: 
   descripLines:
   - "\u0421\u0442\u0430\u0440\u0430\u044F \u043A\u0430\u0440\u0442\u0438\u043D\u0430,

@@ -11,7 +11,7 @@ public class QuestUI : MonoBehaviour
     [SerializeField] private QuestSO currentQuest;
     [SerializeField] private GameObject frameImage;
 
-    private Dictionary<QuestItemSO, int> currentCounts = new();
+    private Dictionary<string, int> currentCounts = new();
     private void Awake()
     {
         questTextContainer.SetActive(false);
@@ -41,14 +41,15 @@ public class QuestUI : MonoBehaviour
     {
         foreach (var req in currentQuest.requirements)
         {
-            currentCounts[req.item] = 0;
+            currentCounts[req.itemID] = 0;
         }
     }
     private void OnItemAdded(QuestItemSO item) 
     {
-        if (!currentCounts.ContainsKey(item)) return;
+        string id = item.itemID;
+        if (!currentCounts.ContainsKey(id)) return;
 
-        currentCounts[item]++;
+        currentCounts[id]++;
         UpdateUI();
     }
     private void UpdateUI() 
@@ -57,7 +58,7 @@ public class QuestUI : MonoBehaviour
 
         foreach (var req in currentQuest.requirements)
         {
-            int current = currentCounts[req.item];
+            int current = currentCounts[req.itemID];
             int max = req.requiredStackSize;
             string name = req.item.itemName;
             text += $"{name} : {current}/{max}\n";

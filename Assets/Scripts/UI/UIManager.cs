@@ -9,12 +9,12 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private ChoicePanel choicePanel;
     [SerializeField] private QuestUI questUI;
     [SerializeField] private PageUI pageUI;
-    [SerializeField] private FinalChoice finalChoice;
+    [SerializeField] private ScreenFader screenFader;
 
     public Inventory Inventory => inventory;
     public Description Description => description;
     public ChoicePanel ChoicePanel => choicePanel;
     public QuestUI QuestUI => questUI;
     public PageUI PageUI => pageUI;
-    public FinalChoice FinalChoice => finalChoice;
+    public ScreenFader ScreenFader => screenFader;
 }

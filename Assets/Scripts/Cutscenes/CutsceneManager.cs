@@ -1,27 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CutsceneManager : MonoBehaviour
 {
-    //диалоговое окно, показывает диалог
-    //передвижение персонажа к двери
-    //остановка, игрок оглядывается на призрака и все же уходит за дверь
-    //окончание письмом или же просто текстом "Конец...?"
-
     [SerializeField] private Animator playerAnim;
     [SerializeField] private Dialogue dialogue;
     [SerializeField] private DialogueSO defDialogueSO;
+    [SerializeField] private DialogueSO trueDialogueSO;
+
 
     [SerializeField] private GameObject player;
     [SerializeField] private Transform doorTarget;
     [SerializeField] private Transform stopSpot;
+    [SerializeField] private GameObject theEndScreen;
+    [SerializeField] private TextMeshProUGUI defEnd;
+    [SerializeField] private TextMeshProUGUI trueEnd;
 
     private float speed = 3f;
-    private void Start()
+    private void OnEnable()
     {
-        if (playerAnim == null)
-            playerAnim = player.GetComponent<Animator>();
+        if (Player.Instance != null)
+        {
+            player = Player.Instance.gameObject;
+            playerAnim = Player.Instance.GetComponent<Animator>();
+        }
     }
     public void StartDefaultCutscene() 
     {
@@ -29,22 +35,26 @@ public class CutsceneManager : MonoBehaviour
     }
     private IEnumerator ActivateDefaultCutscene() 
     {
-        yield return StartCoroutine(TryStartDialogue());
+        yield return StartCoroutine(TryStartDialogue(defDialogueSO));
         yield return new WaitForSeconds(2f);
         yield return StartCoroutine(MoveToSpot());
         yield return StartCoroutine(MoveToDoor());
+        yield return UIManager.Instance.ScreenFader.FadeOut();
+        theEndScreen.SetActive(true);
+        defEnd.enabled = true;
+        yield return UIManager.Instance.ScreenFader.FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(0);
     }
-    private IEnumerator TryStartDialogue() 
+    private IEnumerator TryStartDialogue(DialogueSO dialogueSO) 
     {
-        dialogue.StartDialogue(defDialogueSO);
+        dialogue.StartDialogue(dialogueSO);
 
         while (dialogue.IsDialogueActive) 
             yield return null;
     }
     private IEnumerator MoveToSpot() 
     {
-        //var playerMovement = player.GetComponent<PlayerMovement>();
-
         if (Player.Instance != null)
         {
             Player.Instance.enabled = false;
@@ -75,8 +85,6 @@ public class CutsceneManager : MonoBehaviour
     }
     private IEnumerator MoveToDoor() 
     {
-        //var playerMovement = player.GetComponent<PlayerMovement>();
-
         if (Player.Instance != null)
         {
             Player.Instance.enabled = false;
@@ -108,4 +116,19 @@ public class CutsceneManager : MonoBehaviour
         playerAnim.SetFloat("Horizontal", 0);
         playerAnim.SetFloat("Vertical", 0);
     }
+    public void StartTrueCutscene() 
+    {
+        StartCoroutine(ActivateTrueCutscene());
+    }
+    private IEnumerator ActivateTrueCutscene() 
+    {
+        yield return StartCoroutine(TryStartDialogue(trueDialogueSO));
+        yield return UIManager.Instance.ScreenFader.FadeOut();
+        theEndScreen.SetActive(true);
+        trueEnd.enabled = true;
+        yield return UIManager.Instance.ScreenFader.FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(0);
+    }
+
 }

@@ -20,14 +20,12 @@ public class PageUI : MonoBehaviour
     }
     public void ShowPage(ReadableQuestItemSO itemSO) 
     {
-        Debug.Log("Открытие страницы");
         window.SetActive(true);
         pageText.text = itemSO.readableText;
         Player.Instance.LockMovement();
     }
     public void ClosePage() 
     {
-        Debug.Log("Закрытие страницы");
         window.SetActive(false);
         pageText.text = "";
         InteractionController.Instance.FinishInteraction();

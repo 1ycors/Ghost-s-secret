@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ab3a151f0b62704686abbf4ec1a3002, type: 3}
-  m_Name: Weapon
+  m_Script: {fileID: 11500000, guid: 272dc55ab20413c4498c0b3e622ff119, type: 3}
+  m_Name: Vase1
   m_EditorClassIdentifier: 
-  itemName: 
-  itemIcon: {fileID: 0}
-  itemID: 
+  descripLines:
+  - "\u041F\u044B\u043B\u044C\u043D\u0430\u044F \u0434\u0435\u043A\u043E\u0440\u0430\u0442\u0438\u0432\u043D\u0430\u044F
+    \u0432\u0430\u0437\u0430."

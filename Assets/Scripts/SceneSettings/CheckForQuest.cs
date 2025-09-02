@@ -16,7 +16,7 @@ public class CheckForQuest : MonoBehaviour
     {
         NPCInteractionManager.OnQuestEnable += ColliderActivate;
     }
-    private void Disenable()
+    private void OnDisable()
     {
         NPCInteractionManager.OnQuestEnable -= ColliderActivate;
     }

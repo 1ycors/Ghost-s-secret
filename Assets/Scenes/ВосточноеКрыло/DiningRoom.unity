@@ -236,6 +236,8 @@ GameObject:
   m_Component:
   - component: {fileID: 64456688}
   - component: {fileID: 64456689}
+  - component: {fileID: 64456691}
+  - component: {fileID: 64456690}
   m_Layer: 0
   m_Name: Picture
   m_TagString: Untagged
@@ -310,6 +312,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &64456690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64456687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: a1cd0a9f885cb724fa17435ef810fc1a, type: 2}
+--- !u!61 &64456691
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64456687}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 1.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!1 &80454281
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +808,7 @@ GameObject:
   - component: {fileID: 262923428}
   - component: {fileID: 262923430}
   - component: {fileID: 262923429}
+  - component: {fileID: 262923431}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -867,6 +928,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &262923431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262923427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &349986725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,6 +1537,7 @@ GameObject:
   - component: {fileID: 580688645}
   - component: {fileID: 580688647}
   - component: {fileID: 580688646}
+  - component: {fileID: 580688648}
   m_Layer: 0
   m_Name: Vase
   m_TagString: Untagged
@@ -1572,6 +1647,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &580688648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580688644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 377d9728e81f0da498ca7709d0462054, type: 2}
 --- !u!1 &681150897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,6 +2440,7 @@ GameObject:
   - component: {fileID: 919120655}
   - component: {fileID: 919120657}
   - component: {fileID: 919120656}
+  - component: {fileID: 919120658}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -2471,6 +2560,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &919120658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919120654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &920733836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3094,6 +3196,7 @@ GameObject:
   - component: {fileID: 1140995451}
   - component: {fileID: 1140995453}
   - component: {fileID: 1140995452}
+  - component: {fileID: 1140995454}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -3213,6 +3316,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1140995454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140995450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &1152598639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,7 +3389,7 @@ Transform:
   m_GameObject: {fileID: 1157764485}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8721, y: -2.87, z: -4.179862}
+  m_LocalPosition: {x: -0.85, y: -2.77, z: -4.179862}
   m_LocalScale: {x: 1.0446, y: 1.0446, z: 1.0446}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3319,7 +3435,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 2081424818, guid: 65734ceccafc95a4f989ca702e3c580b, type: 3}
   m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
   m_FlipX: 0
@@ -3342,6 +3458,7 @@ GameObject:
   - component: {fileID: 1161812708}
   - component: {fileID: 1161812710}
   - component: {fileID: 1161812709}
+  - component: {fileID: 1161812711}
   m_Layer: 0
   m_Name: Vase
   m_TagString: Untagged
@@ -3451,6 +3568,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1161812711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161812707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 2e7a8b709ecc8f14aaca4587f4893adf, type: 2}
 --- !u!1 &1168785603
 GameObject:
   m_ObjectHideFlags: 0
@@ -10794,7 +10924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 989951330844269945, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2492620796606979636, guid: 5a73d2f1cdf8bf648a60d754c433a38c, type: 3}
       propertyPath: item
@@ -11090,6 +11220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1464854746}
   - component: {fileID: 1464854747}
+  - component: {fileID: 1464854748}
   m_Layer: 0
   m_Name: Picture
   m_TagString: Untagged
@@ -11164,6 +11295,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1464854748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464854745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 6fb7205ebaf780f4f971e3917763966b, type: 2}
 --- !u!1 &1545162095
 GameObject:
   m_ObjectHideFlags: 0
@@ -11340,6 +11484,7 @@ GameObject:
   - component: {fileID: 1574197600}
   - component: {fileID: 1574197602}
   - component: {fileID: 1574197601}
+  - component: {fileID: 1574197603}
   m_Layer: 0
   m_Name: Vase
   m_TagString: Untagged
@@ -11449,6 +11594,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1574197603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574197599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 377d9728e81f0da498ca7709d0462054, type: 2}
 --- !u!1 &1607078865
 GameObject:
   m_ObjectHideFlags: 0
@@ -11459,6 +11617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1607078866}
   - component: {fileID: 1607078867}
+  - component: {fileID: 1607078868}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -11533,6 +11692,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1607078868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607078865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 0}
 --- !u!1 &1733967828
 GameObject:
   m_ObjectHideFlags: 0
@@ -11728,6 +11900,7 @@ GameObject:
   - component: {fileID: 1892309673}
   - component: {fileID: 1892309675}
   - component: {fileID: 1892309674}
+  - component: {fileID: 1892309676}
   m_Layer: 0
   m_Name: Bookcase
   m_TagString: Untagged
@@ -11847,6 +12020,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1892309676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892309672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc1f4eb5169984498a0e5c5d9efa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descripSO: {fileID: 11400000, guid: 4461181814dec954597fdf8fa8aeb7f5, type: 2}
 --- !u!1 &1901913892
 GameObject:
   m_ObjectHideFlags: 0
