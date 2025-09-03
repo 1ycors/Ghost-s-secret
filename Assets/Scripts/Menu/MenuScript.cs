@@ -16,10 +16,8 @@ public class MenuScript : MonoBehaviour
     }
     private void StartTheGame() 
     {
-        SceneManager.LoadScene(1);
         PlayerPrefs.DeleteAll();
-        if (Player.Instance != null)
-            Destroy(Player.Instance.gameObject);
+        SceneManager.LoadScene(1);
     }
     private void EndTheGame() 
     {

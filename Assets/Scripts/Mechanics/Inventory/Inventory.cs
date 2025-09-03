@@ -79,4 +79,11 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+    public void Clear() 
+    {
+        foreach (var slot in slots)
+        {
+            slot.Clear();
+        }
+    }
 }

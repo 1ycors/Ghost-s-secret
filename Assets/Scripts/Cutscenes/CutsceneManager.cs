@@ -43,8 +43,8 @@ public class CutsceneManager : MonoBehaviour
         theEndScreen.SetActive(true);
         defEnd.enabled = true;
         yield return UIManager.Instance.ScreenFader.FadeIn();
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(2f);
+        Application.Quit();
     }
     private IEnumerator TryStartDialogue(DialogueSO dialogueSO) 
     {
@@ -127,8 +127,8 @@ public class CutsceneManager : MonoBehaviour
         theEndScreen.SetActive(true);
         trueEnd.enabled = true;
         yield return UIManager.Instance.ScreenFader.FadeIn();
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(2f);
+        Application.Quit();
     }
 
 }

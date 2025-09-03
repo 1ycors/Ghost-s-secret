@@ -21,5 +21,6 @@ public class InventorySlots : MonoBehaviour
     public void Clear() 
     {
         itemInstance = null;
+        slotImage = null;
     }
 }

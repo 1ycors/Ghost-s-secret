@@ -65,4 +65,13 @@ public class QuestUI : MonoBehaviour
         }
         questText.text = text;  
     }
+    public void ResetQuestState()
+    {
+        foreach (var req in currentQuest.requirements)
+        {
+            currentCounts[req.itemID] = 0;
+        }
+        questTextContainer.SetActive(false);
+        frameImage.SetActive(false);
+    }
 }

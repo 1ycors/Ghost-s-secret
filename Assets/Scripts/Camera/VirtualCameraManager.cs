@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class VirtualCameraManager : Singleton<VirtualCameraManager>
 {
-    //protected override void Awake()
-    //{
-    //    base.Awake();
-    //    virtualCamera = GetComponent<CinemachineVirtualCamera>();
-    //    TryUpdateCameraTarget();
-    //}
     private void Start()
     {
         TryUpdateCameraTarget();
