@@ -14,7 +14,7 @@ A game where you need to help a ghost to find out who killed him and why. Help t
 - UI setup
 - Different endings
 
-##Download:
+## Download:
 [Download for Windows on Itch.io](https://lycor1s.itch.io/ghosts-secret)
 
 ## Assets artists:
